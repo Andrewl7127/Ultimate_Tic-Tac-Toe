@@ -27,8 +27,19 @@ public class MiniArray
     
     public int checkWon()
     {
+      int check = checkRow();
+      if(check > 0)
+        return check;
         
-        
+      check = checkCol();
+      if(check > 0)
+         return check;   
+      
+      check = checkDiagonal();
+      if(check>0)
+        return check;
+      
+      return -1;
         
     }
     
