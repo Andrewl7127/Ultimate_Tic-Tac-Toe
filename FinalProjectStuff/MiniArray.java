@@ -60,5 +60,18 @@ public class MiniArray
         
     }
     
-    
+    private int checkDiagonal()
+    {
+        int x = miniTicTac[0][2] + miniTicTac[1][1] + miniTicTac[2][0];
+        
+        if(x == 0 || x==3)
+            return x;
+        
+        x = miniTicTac[2][2] + miniTicTac[1][1] + miniTicTac[0][0];
+        if(x == 0 || x==3)
+            return x;
+        
+       return -1;
+        
+    }
 }
