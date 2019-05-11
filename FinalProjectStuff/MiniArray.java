@@ -118,7 +118,12 @@ public class MiniArray
       
       finishedSquare = true;          
       return true;
-        
+
+    }
+    
+    public boolean getFinishedSquare()
+    {
+        return finishedSquare;
         
     }
 }
