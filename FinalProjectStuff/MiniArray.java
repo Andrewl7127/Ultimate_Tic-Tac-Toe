@@ -20,13 +20,45 @@ public class MiniArray
     
     //x and y are the INDEXES of the cell the player has moved
     //player is 1 if "X" has moved, and 0 is "O" has moved 
-    private void doMove(int x, int y, int player)
+    public void doMove(int x, int y, int player)
     {
         miniTicTac[x][y] = player;
     }
     
+    public int checkWon()
+    {
         
         
+        
+    }
+    
+    private int checkRow()
+    {
+        int x = 0;
+        for(int i =0; i<3; i++)
+        {
+             x = miniTicTac[i][0] + miniTicTac[i][1] + miniTicTac[i][2];
+             if(x == 0 || x == 3)
+                return x;
+            }
+        
+        return -1;
+    }
+    
+    private int checkCol()
+    {
+        int x = 0;
+        for(int i =0; i<3; i++)
+        {
+             x = miniTicTac[0][i] + miniTicTac[1][i] + miniTicTac[2][i];
+             if(x == 0 || x == 3)
+                return x;
+            }
+        
+        return -1;  
+        
+        
+    }
     
     
 }
