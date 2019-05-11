@@ -20,8 +20,13 @@ public class MiniArray
             miniTicTac[row][col] = -1;
     }
     
-    //x and y are the INDEXES of the cell the player has moved
-    //player is 1 if "X" has moved, and 0 is "O" has moved 
+    /**
+     * does the move specified 
+     * @param x        index of x location that move needs to be played
+     * @param y        index of y location that move needs to be played
+     * @param player   what player makes the move
+     *                 should be either "1" for "X" or "0" for "Y"
+     */
     public void doMove(int x, int y, int player)
     {
         miniTicTac[x][y] = player;
@@ -29,6 +34,9 @@ public class MiniArray
     
     /**
      * Checks if the array has been won
+     * @return integer           returns 0 or 3 if the square has been won by "X" or "0" respectively
+     *                           returns -1 if the square has not been won
+     *                           returns 2 if the square has been drawn
      */
     public int checkWon()
     {
@@ -44,32 +52,38 @@ public class MiniArray
       if(check>0)
         return check;
       
+      if(checkDraw())
+        return 2;
+    
       return -1;
         
     }
     
     private int checkRow()
-    {
+        {
         int x = 0;
         for(int i =0; i<3; i++)
         {
              x = miniTicTac[i][0] + miniTicTac[i][1] + miniTicTac[i][2];
              if(x == 0 || x == 3)
+             {
+                finishedSquare = true;
                 return x;
             }
-        
+        }
         return -1;
     }
-    
     private int checkCol()
     {
         int x = 0;
         for(int i =0; i<3; i++)
         {
              x = miniTicTac[0][i] + miniTicTac[1][i] + miniTicTac[2][i];
-             if(x == 0 || x == 3)
+             if(x == 0 || x == 3){
+                finishedSquare = true;
                 return x;
             }
+        }
         
         return -1;  
         
@@ -80,23 +94,29 @@ public class MiniArray
     {
         int x = miniTicTac[0][2] + miniTicTac[1][1] + miniTicTac[2][0];
         
-        if(x == 0 || x==3)
+        if(x == 0 || x==3){
+            finishedSquare = true;
             return x;
+        }
         
         x = miniTicTac[2][2] + miniTicTac[1][1] + miniTicTac[0][0];
-        if(x == 0 || x==3)
+        if(x == 0 || x==3){
+            finishedSquare = true;
             return x;
-        
+        }
        return -1;
         
     }
     
     private boolean checkDraw()
     {
+      
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
-            if(!(miniTicTac >=0))
+            if(!(miniTicTac[row][col] >=0))
                 return false;
+      
+      finishedSquare = true;          
       return true;
         
         
