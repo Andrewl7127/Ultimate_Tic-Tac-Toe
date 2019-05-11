@@ -8,10 +8,12 @@
 public class MiniArray
 {
     private int [][] miniTicTac; 
+    boolean finishedSquare;
     
     public MiniArray()
     {
       miniTicTac = new int [3][3];
+      finishedSquare = false;
       
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
@@ -25,6 +27,9 @@ public class MiniArray
         miniTicTac[x][y] = player;
     }
     
+    /**
+     * Checks if the array has been won
+     */
     public int checkWon()
     {
       int check = checkRow();
@@ -83,6 +88,17 @@ public class MiniArray
             return x;
         
        return -1;
+        
+    }
+    
+    private boolean checkDraw()
+    {
+      for (int row = 0; row < miniTicTac.length; row++)
+        for(int col = 0; col < miniTicTac[0].length; col++)
+            if(!(miniTicTac >=0))
+                return false;
+      return true;
+        
         
     }
 }
