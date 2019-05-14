@@ -8,7 +8,7 @@
 public class MiniArray
 {
     private int [][] miniTicTac; 
-    boolean finishedSquare;
+    private boolean finishedSquare;
     
     public MiniArray()
     {
