@@ -8,12 +8,10 @@
 public class MasterArray
 {
     private MiniArray [][] bigTicTac; 
-    private boolean finishedSquare;
     
     public MasterArray()
     {
       bigTicTac = new MiniArray [3][3];
-      finishedSquare = false;
       
       for (int row = 0; row < bigTicTac.length; row++)
         for(int col = 0; col < bigTicTac[0].length; col++)
@@ -40,24 +38,30 @@ public class MasterArray
      *                           returns -1 if the square has not been won
      *                           returns 2 if the square has been drawn
      */
-    public int checkWon()
+    public String checkWon()
     {
-      int check = checkRow();
-      if(check >= 0)
-        return check;
+      String check = checkRow();
+      if(check.equals("X"))
+        return "X";
+      if(check.equals("O"))
+         return "O";   
         
       check = checkCol();
-      if(check >= 0)
-         return check;   
+      if(check.equals("X"))
+        return "X";
+      if(check.equals("O"))
+         return "O";   
       
       check = checkDiagonal();
-      if(check >= 0)
-        return check;
+      if(check.equals("X"))
+        return "X";
+      if(check.equals("O"))
+         return "O";   
       
       if(checkDraw())
-        return 2;
+        return "D";
     
-      return -1;
+      return " ";
         
     }
     
@@ -103,7 +107,7 @@ public class MasterArray
         if(x == "OOO")
             return "O";
         
-        x = bigTicTac[2][2] + bigTicTac[1][1] + bigTicTac[0][0];
+        x = bigTicTac[2][2].getFinishedSquare() + bigTicTac[1][1].getFinishedSquare() + bigTicTac[0][0].getFinishedSquare();
         
         if(x == "XXX")
             return "X";
@@ -119,16 +123,10 @@ public class MasterArray
       
       for (int row = 0; row < bigTicTac.length; row++)
         for(int col = 0; col < bigTicTac[0].length; col++)
-            if(!(bigTicTac[row][col].equals("D")))
+            if(!(bigTicTac[row][col].getFinishedSquare().equals("D")))
                 return false;
                 
       return flag;
 
-    }
-    
-    public boolean getFinishedSquare()
-    {
-        return finishedSquare;
-        
     }
 }
