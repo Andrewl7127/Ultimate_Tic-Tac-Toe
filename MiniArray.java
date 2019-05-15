@@ -109,21 +109,41 @@ public class MiniArray
 
     }
     
-    private int checkDiagonal()
+    private boolean checkDiagonal()
     {
-        int x = miniTicTac[0][2] + miniTicTac[1][1] + miniTicTac[2][0];
         
-        if(x == 0 || x==3){
-            finishedSquare = true;
-            return x;
+        if (miniTicTac[0][2].equals("X") &&
+            miniTicTac[1][1].equals("X") && 
+            miniTicTac[2][0].equals("X")){
+            finishedSquare = "X";
+            return true;
+         }
+         else {
+             if (miniTicTac[0][2].equals("Y") &&
+                 miniTicTac[1][1].equals("Y") && 
+                 miniTicTac[2][0].equals("Y")){
+                finishedSquare = "Y";
+                return true;
+         }
+       }
+       
+        if(miniTicTac[2][2].equals("X") && 
+           miniTicTac[1][1].equals("X") &&
+           miniTicTac[0][0].equals("X")) {
+              finishedSquare = "X";
+              return true;
+               
+            }
+           else{
+               if(miniTicTac[2][2].equals("Y") && 
+                  miniTicTac[1][1].equals("Y") &&
+                  miniTicTac[0][0].equals("Y")) {
+                  finishedSquare = "Y";
+                  return true;
+                       
+                }
         }
-        
-        x = miniTicTac[2][2] + miniTicTac[1][1] + miniTicTac[0][0];
-        if(x == 0 || x==3){
-            finishedSquare = true;
-            return x;
-        }
-       return -1;
+       return false;
         
     }
     
@@ -132,15 +152,16 @@ public class MiniArray
       
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
-            if(!(miniTicTac[row][col] >=0))
+            if(!(miniTicTac[row][col].equals("X") ||
+               miniTicTac[row][col].equals("Y")))
                 return false;
       
-      finishedSquare = true;          
+      finishedSquare = "D";          
       return true;
 
     }
     
-    public boolean getFinishedSquare()
+    public String getFinishedSquare()
     {
         return finishedSquare;
         
