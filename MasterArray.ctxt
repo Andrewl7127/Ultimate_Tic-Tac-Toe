@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=MasterArray
+comment0.text=\n\ Write\ a\ description\ of\ class\ MasterArray\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=MasterArray()
+comment2.params=x1\ y1\ x\ y\ player
+comment2.target=void\ doMove(int,\ int,\ int,\ int,\ java.lang.String)
+comment2.text=\n\ does\ the\ move\ specified\ \n\ @param\ x\ \ \ \ \ \ \ \ index\ of\ x\ location\ that\ move\ needs\ to\ be\ played\n\ @param\ y\ \ \ \ \ \ \ \ index\ of\ y\ location\ that\ move\ needs\ to\ be\ played\n\ @param\ player\ \ \ what\ player\ makes\ the\ move\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ should\ be\ either\ "1"\ for\ "X"\ or\ "0"\ for\ "Y"\n
+comment3.params=
+comment3.target=java.lang.String\ checkWon()
+comment3.text=\n\ Checks\ if\ the\ array\ has\ been\ won\n\ @return\ integer\ \ \ \ \ \ \ \ \ \ \ returns\ 0\ or\ 3\ if\ the\ square\ has\ been\ won\ by\ "X"\ or\ "0"\ respectively\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns\ -1\ if\ the\ square\ has\ not\ been\ won\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns\ 2\ if\ the\ square\ has\ been\ drawn\n
+comment4.params=
+comment4.target=java.lang.String\ checkRow()
+comment5.params=
+comment5.target=java.lang.String\ checkCol()
+comment6.params=
+comment6.target=java.lang.String\ checkDiagonal()
+comment7.params=
+comment7.target=boolean\ checkDraw()
+numComments=8

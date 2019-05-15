@@ -25,9 +25,9 @@ public class MasterArray
      * @param player   what player makes the move
      *                 should be either "1" for "X" or "0" for "Y"
      */
-    public void doMove(int x1, int y1, int x, int y, int player)
+    public void doMove(int x1, int y1, int x, int y, String player)
     {
-        if(bigTicTac[x1][y1].getFinishedSquare())
+        if(!bigTicTac[x1][y1].getFinishedSquare().equals(" "))
             throw new IllegalArgumentException();
         bigTicTac[x1][y1].doMove(x, y, player);
     }
@@ -69,12 +69,12 @@ public class MasterArray
         {
              for(int i =0; i<3; i++)
         {
-             if (bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
-             + bigTicTac[i][2].getFinishedSquare() == "OOO")
+             if ((bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
+             + bigTicTac[i][2].getFinishedSquare()).equals("OOO"))
                 return "O";
                 
-             if (bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
-             + bigTicTac[i][2].getFinishedSquare() == "XXX")
+             if ((bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
+             + bigTicTac[i][2].getFinishedSquare()).equals("XXX"))
                 return "X";
         }
         
@@ -86,12 +86,12 @@ public class MasterArray
     {
         for(int i =0; i<3; i++)
         {
-             if (bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
-             + bigTicTac[2][i].getFinishedSquare() == "OOO")
+             if ((bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
+             + bigTicTac[2][i].getFinishedSquare()).equals("OOO"))
                 return "O";
                 
-             if (bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
-             + bigTicTac[2][i].getFinishedSquare() == "XXX")
+             if ((bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
+             + bigTicTac[2][i].getFinishedSquare()).equals("XXX"))
                 return "X";
         }
         
@@ -100,18 +100,18 @@ public class MasterArray
     
     private String checkDiagonal()
     {
-        int x = bigTicTac[0][2].getFinishedSquare() + bigTicTac[1][1].getFinishedSquare() + bigTicTac[2][0].getFinishedSquare();
+        String x = bigTicTac[0][2].getFinishedSquare() + bigTicTac[1][1].getFinishedSquare() + bigTicTac[2][0].getFinishedSquare();
         
-        if(x == "XXX")
+        if(x.equals("XXX"))
             return "X";
-        if(x == "OOO")
+        if(x.equals("OOO"))
             return "O";
         
         x = bigTicTac[2][2].getFinishedSquare() + bigTicTac[1][1].getFinishedSquare() + bigTicTac[0][0].getFinishedSquare();
         
-        if(x == "XXX")
+        if(x.equals("XXX"))
             return "X";
-        if(x == "OOO")
+        if(x.equals("OOO"))
             return "O";
         
        return " ";
