@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=MiniArray
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MiniArray\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ MiniArray\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=MiniArray()
 comment2.params=x\ y\ player
 comment2.target=void\ doMove(int,\ int,\ java.lang.String)
-comment2.text=\r\n\ does\ the\ move\ specified\ \r\n\ @param\ x\ \ \ \ \ \ \ \ index\ of\ x\ location\ that\ move\ needs\ to\ be\ played\r\n\ @param\ y\ \ \ \ \ \ \ \ index\ of\ y\ location\ that\ move\ needs\ to\ be\ played\r\n\ @param\ player\ \ \ what\ player\ makes\ the\ move\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ should\ be\ "X"\ or\ "O"\r\n
+comment2.text=\n\ does\ the\ move\ specified\ \n\ @param\ x\ \ \ \ \ \ \ \ index\ of\ x\ location\ that\ move\ needs\ to\ be\ played\n\ @param\ y\ \ \ \ \ \ \ \ index\ of\ y\ location\ that\ move\ needs\ to\ be\ played\n\ @param\ player\ \ \ what\ player\ makes\ the\ move\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ should\ be\ "X"\ or\ "O"\n
 comment3.params=
 comment3.target=boolean\ checkWon()
-comment3.text=\r\n\ Checks\ if\ the\ array\ has\ been\ won\r\n\ @return\ integer\ \ \ \ \ \ \ \ \ \ \ returns\ 0\ or\ 3\ if\ the\ square\ has\ been\ won\ by\ "X"\ or\ "0"\ respectively\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns\ -1\ if\ the\ square\ has\ not\ been\ won\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns\ 2\ if\ the\ square\ has\ been\ drawn\r\n
+comment3.text=\n\ Checks\ if\ the\ array\ has\ been\ won\n\ @return\ integer\ \ \ \ \ \ \ \ \ \ \ returns\ 0\ or\ 3\ if\ the\ square\ has\ been\ won\ by\ "X"\ or\ "0"\ respectively\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns\ -1\ if\ the\ square\ has\ not\ been\ won\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns\ 2\ if\ the\ square\ has\ been\ drawn\n
 comment4.params=
 comment4.target=boolean\ checkRow()
 comment5.params=

@@ -27,7 +27,7 @@ public class MasterArray
      */
     public void doMove(int x1, int y1, int x, int y, String player)
     {
-        if(!bigTicTac[x1][y1].getFinishedSquare().equals(" "))
+        if(bigTicTac[x1][y1].getFinishedSquare().equals(null))
             throw new IllegalArgumentException();
         bigTicTac[x1][y1].doMove(x, y, player);
     }
