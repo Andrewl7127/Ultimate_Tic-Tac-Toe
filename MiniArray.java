@@ -8,7 +8,7 @@
 public class MiniArray
 {
     private int [][] miniTicTac; 
-    boolean finishedSquare;
+    private boolean finishedSquare;
     
     public MiniArray()
     {
@@ -29,6 +29,8 @@ public class MiniArray
      */
     public void doMove(int x, int y, int player)
     {
+        if(miniTicTac[x][y] <0)
+            throw new IllegalArgumentException();
         miniTicTac[x][y] = player;
     }
     
@@ -41,15 +43,15 @@ public class MiniArray
     public int checkWon()
     {
       int check = checkRow();
-      if(check > 0)
+      if(check >= 0)
         return check;
         
       check = checkCol();
-      if(check > 0)
+      if(check >= 0)
          return check;   
       
       check = checkDiagonal();
-      if(check>0)
+      if(check >= 0)
         return check;
       
       if(checkDraw())
@@ -73,6 +75,8 @@ public class MiniArray
         }
         return -1;
     }
+    
+    
     private int checkCol()
     {
         int x = 0;
