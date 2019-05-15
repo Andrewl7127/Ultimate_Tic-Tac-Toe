@@ -90,16 +90,23 @@ public class MiniArray
         int x = 0;
         for(int i =0; i<3; i++)
         {
-             x =;
-             if( miniTicTac[0][i] + miniTicTac[1][i] + miniTicTac[2][i]){
-                finishedSquare = true;
-                return x;
-            }
+            if(miniTicTac[0][i].equals("X") && 
+                miniTicTac[1][i].equals("X") &&
+                miniTicTac[2][i].equals ("X")){
+                   finishedSquare = "X"; 
+                   return true;
+                }
+             
+             if(miniTicTac[0][i].equals("Y") && 
+                miniTicTac[1][i].equals("Y") &&
+                miniTicTac[2][i].equals ("Y")){
+                   finishedSquare = "Y";  
+                   return true;
+                }
         }
         
-        return -1;  
-        
-        
+        return false;  
+
     }
     
     private int checkDiagonal()
