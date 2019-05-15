@@ -58,10 +58,10 @@ public class MiniArray
                    return true;
                 }
              
-             if(miniTicTac[i][0].equals("Y") && 
-                miniTicTac[i][1].equals("Y") &&
-                miniTicTac[i][2].equals ("Y")){
-                   finishedSquare = "Y";  
+             if(miniTicTac[i][0].equals("O") && 
+                miniTicTac[i][1].equals("O") &&
+                miniTicTac[i][2].equals ("O")){
+                   finishedSquare = "O";  
                    return true;
                 }
                  
@@ -82,10 +82,10 @@ public class MiniArray
                    return true;
                 }
              
-             if(miniTicTac[0][i].equals("Y") && 
-                miniTicTac[1][i].equals("Y") &&
-                miniTicTac[2][i].equals ("Y")){
-                   finishedSquare = "Y";  
+             if(miniTicTac[0][i].equals("O") && 
+                miniTicTac[1][i].equals("O") &&
+                miniTicTac[2][i].equals ("O")){
+                   finishedSquare = "O";  
                    return true;
                 }
         }
@@ -104,10 +104,10 @@ public class MiniArray
             return true;
          }
          else {
-             if (miniTicTac[0][2].equals("Y") &&
-                 miniTicTac[1][1].equals("Y") && 
-                 miniTicTac[2][0].equals("Y")){
-                finishedSquare = "Y";
+             if (miniTicTac[0][2].equals("O") &&
+                 miniTicTac[1][1].equals("O") && 
+                 miniTicTac[2][0].equals("O")){
+                finishedSquare = "O";
                 return true;
          }
        }
@@ -120,10 +120,10 @@ public class MiniArray
                
             }
            else{
-               if(miniTicTac[2][2].equals("Y") && 
-                  miniTicTac[1][1].equals("Y") &&
-                  miniTicTac[0][0].equals("Y")) {
-                  finishedSquare = "Y";
+               if(miniTicTac[2][2].equals("O") && 
+                  miniTicTac[1][1].equals("O") &&
+                  miniTicTac[0][0].equals("O")) {
+                  finishedSquare = "O";
                   return true;
                        
                 }
@@ -138,7 +138,7 @@ public class MiniArray
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
             if(!(miniTicTac[row][col].equals("X") ||
-               miniTicTac[row][col].equals("Y")))
+               miniTicTac[row][col].equals("O")))
                 return false;
       
       finishedSquare = "D";          
