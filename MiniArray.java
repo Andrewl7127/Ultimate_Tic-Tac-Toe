@@ -29,7 +29,7 @@ public class MiniArray
      */
     public void doMove(int x, int y, String player)
     {
-        if(miniTicTac[x][y].equals(" "))
+        if(miniTicTac[x][y].compareTo("X")>0)
             throw new IllegalArgumentException();
         miniTicTac[x][y] = player;
     }
@@ -61,29 +61,37 @@ public class MiniArray
         
     }
     
-    private int checkRow()
+    private boolean checkRow()
         {
         int x = 0;
         for(int i =0; i<3; i++)
         {
-             x = miniTicTac[i][0] + miniTicTac[i][1] + miniTicTac[i][2];
-             if(x == 0 || x == 3)
-             {
-                finishedSquare = true;
-                return x;
-            }
+             if(miniTicTac[i][0].equals("X") && 
+                miniTicTac[i][1].equals("X") &&
+                miniTicTac[i][2].equals ("X")){
+                   finishedSquare = "X"; 
+                   return true;
+                }
+             
+             if(miniTicTac[i][0].equals("Y") && 
+                miniTicTac[i][1].equals("Y") &&
+                miniTicTac[i][2].equals ("Y")){
+                   finishedSquare = "Y";  
+                   return true;
+                }
+                 
         }
-        return -1;
+        return false;
     }
     
     
-    private int checkCol()
+    private boolean  checkCol()
     {
         int x = 0;
         for(int i =0; i<3; i++)
         {
-             x = miniTicTac[0][i] + miniTicTac[1][i] + miniTicTac[2][i];
-             if(x == 0 || x == 3){
+             x =;
+             if( miniTicTac[0][i] + miniTicTac[1][i] + miniTicTac[2][i]){
                 finishedSquare = true;
                 return x;
             }
