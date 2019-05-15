@@ -14,6 +14,10 @@ public class MasterArray
     {
       bigTicTac = new MiniArray [3][3];
       finishedSquare = false;
+      
+      for (int row = 0; row < bigTicTac.length; row++)
+        for(int col = 0; col < bigTicTac[0].length; col++)
+            bigTicTac[row][col] = new MiniArray();
     }
     
     /**
@@ -57,37 +61,37 @@ public class MasterArray
         
     }
     
-    private int checkRow()
+    private boolean checkRow()
         {
-        int x = 0;
-        for(int i =0; i<3; i++)
+             for(int i =0; i<3; i++)
         {
-             x = bigTicTac[i][0] + bigTicTac[i][1] + bigTicTac[i][2];
-             if(x == 0 || x == 3)
-             {
-                finishedSquare = true;
-                return x;
-            }
+             if (bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
+             + bigTicTac[i][2].getFinishedSquare() == "OOO")
+                return "O";
+                
+             if (bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
+             + bigTicTac[i][2].getFinishedSquare() == "XXX")
+                return "X";
         }
-        return -1;
+        
+        return " ";
     }
     
     
-    private int checkCol()
+    private String checkCol()
     {
-        int x = 0;
         for(int i =0; i<3; i++)
         {
-             x = bigTicTac[0][i] + bigTicTac[1][i] + bigTicTac[2][i];
-             if(x == 0 || x == 3){
-                finishedSquare = true;
-                return x;
-            }
+             if (bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
+             + bigTicTac[2][i].getFinishedSquare() == "OOO")
+                return "O";
+                
+             if (bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
+             + bigTicTac[2][i].getFinishedSquare() == "XXX")
+                return "X";
         }
         
-        return -1;  
-        
-        
+        return " ";
     }
     
     private int checkDiagonal()
