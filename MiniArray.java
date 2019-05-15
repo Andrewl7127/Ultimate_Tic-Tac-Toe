@@ -40,24 +40,9 @@ public class MiniArray
      *                           returns -1 if the square has not been won
      *                           returns 2 if the square has been drawn
      */
-    public int checkWon()
+    public boolean checkWon()
     {
-      int check = checkRow();
-      if(check >= 0)
-        return check;
-        
-      check = checkCol();
-      if(check >= 0)
-         return check;   
-      
-      check = checkDiagonal();
-      if(check >= 0)
-        return check;
-      
-      if(checkDraw())
-        return 2;
-    
-      return -1;
+      return (checkRow() || checkCol() || checkDraw());
         
     }
     
