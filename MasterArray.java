@@ -61,7 +61,7 @@ public class MasterArray
         
     }
     
-    private boolean checkRow()
+    private String checkRow()
         {
              for(int i =0; i<3; i++)
         {
@@ -94,34 +94,35 @@ public class MasterArray
         return " ";
     }
     
-    private int checkDiagonal()
+    private String checkDiagonal()
     {
-        int x = bigTicTac[0][2] + bigTicTac[1][1] + bigTicTac[2][0];
+        int x = bigTicTac[0][2].getFinishedSquare() + bigTicTac[1][1].getFinishedSquare() + bigTicTac[2][0].getFinishedSquare();
         
-        if(x == 0 || x==3){
-            finishedSquare = true;
-            return x;
-        }
+        if(x == "XXX")
+            return "X";
+        if(x == "OOO")
+            return "O";
         
         x = bigTicTac[2][2] + bigTicTac[1][1] + bigTicTac[0][0];
-        if(x == 0 || x==3){
-            finishedSquare = true;
-            return x;
-        }
-       return -1;
         
+        if(x == "XXX")
+            return "X";
+        if(x == "OOO")
+            return "O";
+        
+       return " ";
     }
     
     private boolean checkDraw()
     {
+      boolean flag = true;
       
       for (int row = 0; row < bigTicTac.length; row++)
         for(int col = 0; col < bigTicTac[0].length; col++)
-            if(!(bigTicTac[row][col] >=0))
+            if(!(bigTicTac[row][col].equals("D")))
                 return false;
-      
-      finishedSquare = true;          
-      return true;
+                
+      return flag;
 
     }
     
