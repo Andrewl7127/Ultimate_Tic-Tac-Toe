@@ -7,17 +7,17 @@
  */
 public class MiniArray
 {
-    private int [][] miniTicTac; 
-    private boolean finishedSquare;
+    private String [][] miniTicTac; 
+    private String finishedSquare;
     
     public MiniArray()
     {
-      miniTicTac = new int [3][3];
-      finishedSquare = false;
+      miniTicTac = new String [3][3];
+      finishedSquare = null;
       
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
-            miniTicTac[row][col] = -1;
+            miniTicTac[row][col] = " ";
     }
     
     /**
@@ -25,11 +25,11 @@ public class MiniArray
      * @param x        index of x location that move needs to be played
      * @param y        index of y location that move needs to be played
      * @param player   what player makes the move
-     *                 should be either "1" for "X" or "0" for "Y"
+     *                 should be "X" or "O"
      */
-    public void doMove(int x, int y, int player)
+    public void doMove(int x, int y, String player)
     {
-        if(miniTicTac[x][y] <0)
+        if(miniTicTac[x][y].equals(" "))
             throw new IllegalArgumentException();
         miniTicTac[x][y] = player;
     }
