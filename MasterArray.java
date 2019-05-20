@@ -130,5 +130,8 @@ public class MasterArray
 
     }
     
-    
+    public MiniArray getMiniArray(int x1, int y1)
+    {
+        return bigTicTac[x1][y1];
+    }
 }
