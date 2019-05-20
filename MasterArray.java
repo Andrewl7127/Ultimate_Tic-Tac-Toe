@@ -61,7 +61,7 @@ public class MasterArray
       if(checkDraw())
         return "D";
     
-      return " ";
+      return "IP";
         
     }
     
@@ -128,5 +128,11 @@ public class MasterArray
                 
       return flag;
 
+    }
+    
+    public MiniArray getMiniSquare(int x, int y)
+    {
+        return bigTicTac[x][y];
+        
     }
 }
