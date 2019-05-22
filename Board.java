@@ -1,5 +1,6 @@
 import javafx.scene.Node;
 import java.util.*;
+import javafx.scene.Parent;
 /**
  * Write a description of class Board here.
  *
@@ -32,7 +33,7 @@ public class Board
         return board[row][col];
     }
     
-    public Node getGraphics()
+    public Parent getGraphics()
     {
         return graphics;
     }
