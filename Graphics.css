@@ -1,6 +1,6 @@
 .root {
 
-  -fx-background-color: midnightblue;
+  -fx-background-color: red;
 
   -fx-padding: 30px;
 
@@ -29,6 +29,8 @@
 
   -fx-padding: 10px;
 
-  -fx-background-color: white;
+  -fx-background-color: azure;
+  
+  -fx-border-color: black;
 
 }

@@ -16,11 +16,7 @@ public class TicTacToe extends Application
         //need to get new scene(getGraphics from new Board)
         Board myBoard = new Board();
         Scene myScene = new Scene(myBoard.getGraphics());
-        myScene.getStylesheets().add(
-        getResource(
-        "tictactoe-blueskin.css" 
-        ) //getStylesheets() actually allows external URL images to be used
-           );
+        myScene.getStylesheets().add(getResource("Graphics.css"));
            
         primaryStage.setTitle("Tic-Tac-Toe"); 
         primaryStage.setScene(myScene);
