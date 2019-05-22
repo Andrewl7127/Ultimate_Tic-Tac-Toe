@@ -1,4 +1,5 @@
-
+import javafx.scene.Node;
+import java.util.*;
 /**
  * Write a description of class Board here.
  *
@@ -7,27 +8,33 @@
  */
 public class Board
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private Square[][] board = new Square[9][9];
+    private BoardGraphics graphics;
+    
     /**
      * Constructor for objects of class Board
      */
     public Board()
     {
-        // initialise instance variables
-        x = 0;
+        for(int r = 0; r < 9; r++)
+        {
+            for(int c = 0; c < 9; c++)
+            {
+                board[r][c] = new Square();
+            }
+        }
+        
+        graphics = new BoardGraphics(this);
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public Square getSquare(int row, int col)
     {
-        // put your code here
-        return x + y;
+        return board[row][col];
+    }
+    
+    public Node getGraphics()
+    {
+        return graphics;
     }
 }
+

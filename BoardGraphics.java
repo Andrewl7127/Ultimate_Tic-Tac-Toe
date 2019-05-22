@@ -1,3 +1,4 @@
+import javafx.scene.layout.GridPane;
 
 /**
  * Write a description of class BoardGraphics here.
@@ -5,29 +6,21 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class BoardGraphics
+public class BoardGraphics extends GridPane
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
     /**
      * Constructor for objects of class BoardGraphics
      */
-    public BoardGraphics()
+    public BoardGraphics(Board board) 
     {
-        // initialise instance variables
-        x = 0;
+        for(int row = 0; row < 9; row++)
+        {
+            for(int col = 0; col < 9; col++)
+            {
+                add(((Square)board.getSquare(row, col)).getGraphics(), row, col);
+            }
+        }
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }

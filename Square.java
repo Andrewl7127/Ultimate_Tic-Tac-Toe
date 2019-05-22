@@ -1,4 +1,5 @@
-
+import javafx.scene.Node;
+import java.util.*;
 /**
  * Write a description of class Square here.
  *
@@ -21,5 +22,10 @@ public class Square
     public void clicked()
     {
         //call PlayerStatus class method to switch players
+    }
+    
+    public Node getGraphics()
+    {
+        return mySquare;
     }
 }
