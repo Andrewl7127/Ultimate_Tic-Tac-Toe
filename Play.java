@@ -9,35 +9,39 @@ public class Play
 {
     public static void main(String[] args)
     {
-        int count = 1, previousX = 99, previousY = 99;
-        int x = 0, y = 0, x1 = 0, y1 = 0, input = 5;
+        int count = 1, previousX = 5, previousY = 5, input = 5;
+        int[] answer = new int[4];
         String player = "";
         MasterArray game1 = new MasterArray();
         while (game1.checkWon().equals(" "))
-        {           
+        {
+            answer = game1.inputConvert(input);
             if (count % 2 != 0)
                 player = "X";
             else
                 player = "O";
-                
-            if (game1.getMiniArray(x1, y1).getFinishedSquare() != null)
+            if (count != 1)
             {
-                //reprompt
-            }
-            else
-            {
-                if (x1 != previousX || y1 != previousY)
+                if (game1.getMiniArray(answer[0], answer[1]).getFinishedSquare() != null)
                 {
                     //reprompt
                 }
                 else
                 {
-                    game1.doMove(x1, y1, x, y, player);
-                    game1.getMiniArray(x1, y1).checkWon();
+                    if (answer[0] != previousX || answer[1] != previousY)
+                    {
+                        //reprompt
+                    }
+                    else
+                    {
+                        game1.doMove(answer[0], answer[1], answer[3], answer[4], player);
+                        game1.getMiniArray(answer[0], answer[1]).checkWon();
+                    }
                 }
             }
-            previousX = x;
-            previousY = y;
+            previousX = answer[3];
+            previousY = answer[4];
+            count++;
         }
     }
 }
