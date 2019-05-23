@@ -19,4 +19,6 @@ comment7.params=
 comment7.target=boolean\ checkDraw()
 comment8.params=x1\ y1
 comment8.target=MiniArray\ getMiniArray(int,\ int)
-numComments=9
+comment9.params=input
+comment9.target=int[]\ inputConvert(int)
+numComments=10

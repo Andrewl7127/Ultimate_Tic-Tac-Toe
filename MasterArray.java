@@ -134,4 +134,29 @@ public class MasterArray
     {
         return bigTicTac[x1][y1];
     }
+    
+    public int[] inputConvert(int input)
+    {
+        int[] answer = new int[4];
+        
+        answer[0] = input/27;
+        
+        int temp = input % 9;
+        if (temp == 1 || temp == 2 || temp == 3)
+            answer[1] = 0;
+        if (temp == 4 || temp == 5 || temp == 6)
+            answer[1] = 1;
+        if (temp == 7 || temp == 8 || temp == 0)
+            answer[1] = 2;
+        answer[2] = input / 9 % 3;
+        temp = input % 3;
+        if (temp == 1)
+            answer[3] = 0;
+        if (temp == 2)
+            answer[3] = 1;
+        if (temp == 0)
+            answer[3] = 2;
+        
+        return answer;
+    }
 }

@@ -10,11 +10,11 @@ public class Play
     public static void main(String[] args)
     {
         int count = 1, previousX = 99, previousY = 99;
-        int x = 0, y = 0, x1 = 0, y1 = 0;
+        int x = 0, y = 0, x1 = 0, y1 = 0, input = 5;
         String player = "";
         MasterArray game1 = new MasterArray();
         while (game1.checkWon().equals(" "))
-        {
+        {           
             if (count % 2 != 0)
                 player = "X";
             else
