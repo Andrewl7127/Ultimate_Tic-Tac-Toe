@@ -14,13 +14,17 @@ public class BoardGraphics extends GridPane
      */
     public BoardGraphics(Board board) 
     {
-        for(int row = 0; row < 9; row++)
+        setVgap(5);
+        setHgap(5);
+        
+        for(int row = 0; row < 3; row++)
         {
-            for(int col = 0; col < 9; col++)
+            for(int col = 0; col < 3; col++)
             {
-                add(((Square)board.getSquare(row, col)).getGraphics(), row, col);
+                add(((MasterSquare)board.getSquare(row, col)).getGraphics(), row, col);
             }
         }
+                
     }
 
 }

@@ -1,6 +1,6 @@
 .root {
 
-  -fx-background-color: red;
+  -fx-background-color: blue;
 
   -fx-padding: 30px;
 
@@ -17,6 +17,7 @@
   -fx-hgap: 10px;
 
   -fx-vgap: 10px;
+  
 
   /**-fx-effect: dropshadow(gaussian, slategrey, 20, 0, 0, 0);*/ /* effect disabled as it causes texture tearing on java 8b79 ea for OS X*/
 
@@ -33,4 +34,13 @@
   
   -fx-border-color: black;
 
+}
+
+.mastersquare {
+
+  -fx-background-color: slategrey;
+
+  -fx-hgap: 10px;
+
+  -fx-vgap: 10px;
 }

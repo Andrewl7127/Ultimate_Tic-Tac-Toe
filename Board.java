@@ -1,5 +1,3 @@
-import javafx.scene.Node;
-import java.util.*;
 import javafx.scene.Parent;
 /**
  * Write a description of class Board here.
@@ -9,7 +7,7 @@ import javafx.scene.Parent;
  */
 public class Board
 {
-    private Square[][] board = new Square[9][9];
+    private MasterSquare[][] board = new MasterSquare[3][3];
     private BoardGraphics graphics;
     
     /**
@@ -17,18 +15,18 @@ public class Board
      */
     public Board()
     {
-        for(int r = 0; r < 9; r++)
+        for(int r = 0; r < 3; r++)
         {
-            for(int c = 0; c < 9; c++)
+            for(int c = 0; c < 3; c++)
             {
-                board[r][c] = new Square();
+                board[r][c] = new MasterSquare();
             }
         }
         
         graphics = new BoardGraphics(this);
     }
     
-    public Square getSquare(int row, int col)
+    public MasterSquare getSquare(int row, int col)
     {
         return board[row][col];
     }
