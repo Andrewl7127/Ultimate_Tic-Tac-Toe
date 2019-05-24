@@ -1,4 +1,4 @@
-
+import chn.util.*;
 /**
  * Write a description of class Play here.
  *
@@ -13,8 +13,11 @@ public class Play
         int[] answer = new int[4];
         String player = "";
         MasterArray game1 = new MasterArray();
+        ConsoleIO keyboard = new ConsoleIO();
         while (game1.checkWon().equals(" "))
         {
+            System.out.println("input: ");
+            input = keyboard.readInt();
             answer = game1.inputConvert(input);
             if (count % 2 != 0)
                 player = "X";
