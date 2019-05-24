@@ -13,7 +13,7 @@ public class MiniArray
     public MiniArray()
     {
       miniTicTac = new String [3][3];
-      finishedSquare = null;
+      finishedSquare = " ";
       
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
