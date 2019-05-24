@@ -5,6 +5,7 @@ dependency1.type=UsesDependency
 dependency2.from=MasterArray
 dependency2.to=MiniArray
 dependency2.type=UsesDependency
+
 editor.fx.0.height=722
 editor.fx.0.width=800
 editor.fx.0.x=166
@@ -16,11 +17,14 @@ package.divider.vertical=0.6162988115449916
 package.editor.height=356
 package.editor.width=674
 package.editor.x=376
+
 package.editor.y=316
 package.frame.height=647
 package.frame.width=800
 package.numDependencies=2
+
 package.numTargets=3
+
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
