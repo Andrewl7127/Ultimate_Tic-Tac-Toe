@@ -12,4 +12,6 @@ comment4.params=
 comment4.target=int\ getInput()
 comment5.params=n
 comment5.target=void\ setInput(int)
-numComments=6
+comment6.params=
+comment6.target=java.lang.String\ getStatus()
+numComments=7

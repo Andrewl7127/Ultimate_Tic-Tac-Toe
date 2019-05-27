@@ -10,6 +10,7 @@ public class Square
 {
     private SquareGraphics mySquare;
     private int input;
+    private String status;
     
     /**
      * Constructor for objects of class Square
@@ -18,6 +19,7 @@ public class Square
     {
         mySquare = new SquareGraphics(this);
         input = 1;
+        status = " ";
     }
     
     
@@ -39,5 +41,10 @@ public class Square
     public void setInput(int n)
     {
         input = n;
+    }
+    
+    public String getStatus()
+    {
+        return status;
     }
 }
