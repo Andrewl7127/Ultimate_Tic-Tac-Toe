@@ -12,12 +12,15 @@ public class MiniArray
     private Square[][] mini;
     private MiniGraphics graphics;
     private int n;
-    public MiniArray()
+    private Play bruh;
+    
+    public MiniArray(Play game)
     {
       miniTicTac = new String [3][3];
       mini = new Square[3][3];
       finishedSquare = " ";
       n = 1;
+      bruh = game;
       
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
@@ -27,7 +30,7 @@ public class MiniArray
         {
             for(int c = 0; c < 3; c++)
             {
-                mini[r][c] = new Square();
+                mini[r][c] = new Square(game);
                 mini[r][c].setInput(n);
                 n++;
             }

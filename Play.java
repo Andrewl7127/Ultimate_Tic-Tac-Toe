@@ -9,23 +9,26 @@ public class Play
 {
     private String playerTurn;
     private int count;
-    
+    MasterArray game1;
     public Play()
     {
       count = 1;
       playerTurn = "";
+      game1 = new MasterArray(this);
     }
     
-    public void playGame()
+    public MasterArray getMA()
     {
-        int previousX = 5, previousY = 5, input = 5;
+     return game1;   
+    }
+    
+    public void playGame(int input)
+    {
+        int previousX = 5, previousY = 5;
         int[] answer;
-        MasterArray game1 = new MasterArray();
-        ConsoleIO keyboard = new ConsoleIO();
-        while (game1.checkWon().equals(" "))
+        
+        if(game1.checkWon().equals(" "))
         {
-            System.out.println("input: ");
-            input = keyboard.readInt();
             answer = game1.inputConvert(input);
             
             if (count % 2 != 0)
@@ -41,23 +44,40 @@ public class Play
                 }
                 else
                 {
-                    if (answer[0] != previousX || answer[1] != previousY)
+                     if (answer[0] != previousX || answer[1] != previousY)
                     {
                         //reprompt
                     }
                     else
                     {
-                        game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
-                        game1.getMiniArray(answer[0], answer[1]).getSquare(answer[3], answer[4]).setStatus(playerTurn);
-                        game1.getMiniArray(answer[0], answer[1]).checkWon();
+                         game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
+                        MiniArray temp = game1.getMiniArray(answer[0], answer[1]);
+                        Square temp2 = temp.getSquare(answer[3], answer[4]);
+                        temp2.setStatus(playerTurn);
+                        temp.checkWon();
+                        
+                        
+                        previousX = answer[3];
+                        previousY = answer[4];
+                        count++;  
                     }
                 }
             }
-            previousX = answer[3];
-            previousY = answer[4];
-            count++;
+            else
+            {
+                game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
+                MiniArray temp = game1.getMiniArray(answer[0], answer[1]);
+                Square temp2 = temp.getSquare(answer[2], answer[3]);
+                temp2.setStatus(playerTurn);
+                game1.getMiniArray(answer[0], answer[1]).checkWon();
+                
+                previousX = answer[3];
+                previousY = answer[4];
+                count++;  
+            } 
+              
         }
-    }
+            
+        }
+ }
     
- 
-}

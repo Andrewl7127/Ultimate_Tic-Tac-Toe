@@ -47,9 +47,9 @@ public class SquareGraphics extends StackPane
      setOnMousePressed(new EventHandler<MouseEvent>() 
      {
       @Override public void handle(MouseEvent mouseEvent) {
-        square.clicked();
+        square.clicked(square.getPlay());
         
-        if(square.getStatus().equals(""))
+        if(square.getStatus().equals(" "))
             imageView.setImage(null); 
         if(square.getStatus().equals("X"))
             imageView.setImage(crossImage);

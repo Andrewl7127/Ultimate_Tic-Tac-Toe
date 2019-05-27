@@ -11,21 +11,28 @@ public class Square
     private SquareGraphics mySquare;
     private int input;
     private String myStatus;
+    private Play bruh;
     
     /**
      * Constructor for objects of class Square
      */
-    public Square()
+    public Square(Play game)
     {
         mySquare = new SquareGraphics(this);
         input = 1;
         myStatus = " ";
+        bruh = game;
     }
     
-    
-    public void clicked()
+    public Play getPlay()
     {
-        //call PlayerStatus class method to switch players
+        return bruh;
+    }
+    
+    public void clicked(Play game)
+    {
+        game.playGame(input);
+        
     }
     
     public Node getGraphics()
