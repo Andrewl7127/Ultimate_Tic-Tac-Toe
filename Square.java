@@ -31,7 +31,7 @@ public class Square
     
     public void clicked(Play game)
     {
-        game.playGame(input);
+        game.playGame(this);
         
     }
     

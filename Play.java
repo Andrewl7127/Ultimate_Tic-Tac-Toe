@@ -22,14 +22,14 @@ public class Play
      return game1;   
     }
     
-    public void playGame(int input)
+    public void playGame(Square square)
     {
         int previousX = 5, previousY = 5;
         int[] answer;
         
         if(game1.checkWon().equals(" "))
         {
-            answer = game1.inputConvert(input);
+            answer = game1.inputConvert(square.getInput());
             
             if (count % 2 != 0)
                 playerTurn = "X";
@@ -50,29 +50,31 @@ public class Play
                     }
                     else
                     {
-                         game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
-                        MiniArray temp = game1.getMiniArray(answer[0], answer[1]);
-                        Square temp2 = temp.getSquare(answer[3], answer[4]);
-                        temp2.setStatus(playerTurn);
-                        temp.checkWon();
-                        
-                        
-                        previousX = answer[3];
-                        previousY = answer[4];
-                        count++;  
+                     game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
+                     square.setStatus(playerTurn);
+                     game1.getMiniArray(answer[0], answer[1]).checkWon();
+                 
+                     /*
+                     MiniArray temp = game1.getMiniArray(answer[0], answer[1]);
+                    Square temp2 = temp.getSquare(answer[2], answer[3]);
+                    temp2.setStatus(playerTurn);
+                   
+                    temp.checkWon();
+                    */ 
+                    previousX = answer[2];
+                    previousY = answer[3];
+                    count++; 
                     }
                 }
             }
             else
             {
                 game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
-                MiniArray temp = game1.getMiniArray(answer[0], answer[1]);
-                Square temp2 = temp.getSquare(answer[2], answer[3]);
-                temp2.setStatus(playerTurn);
+                square.setStatus(playerTurn);
                 game1.getMiniArray(answer[0], answer[1]).checkWon();
                 
-                previousX = answer[3];
-                previousY = answer[4];
+                previousX = answer[2];
+                previousY = answer[3];
                 count++;  
             } 
               
