@@ -9,6 +9,7 @@ import java.util.*;
 public class Square
 {
     private SquareGraphics mySquare;
+    private int input;
     
     /**
      * Constructor for objects of class Square
@@ -16,6 +17,7 @@ public class Square
     public Square()
     {
         mySquare = new SquareGraphics(this);
+        input = 1;
     }
     
     
@@ -27,5 +29,15 @@ public class Square
     public Node getGraphics()
     {
         return mySquare;
+    }
+    
+    public int getInput()
+    {
+        return input;
+    }
+    
+    public void setInput(int n)
+    {
+        input = n;
     }
 }
