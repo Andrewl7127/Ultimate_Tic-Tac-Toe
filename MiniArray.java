@@ -9,12 +9,13 @@ public class MiniArray
 {
     private String [][] miniTicTac; 
     private String finishedSquare;
-    private Square[][] mini = new Square[3][3];
+    private Square[][] mini;
     private MiniGraphics graphics;
     private int n;
     public MiniArray()
     {
       miniTicTac = new String [3][3];
+      mini = new Square[3][3];
       finishedSquare = " ";
       n = 1;
       

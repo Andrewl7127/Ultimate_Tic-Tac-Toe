@@ -7,11 +7,19 @@ import chn.util.*;
  */
 public class Play
 {
-    public static void main(String[] args)
+    private String playerTurn;
+    private int count;
+    
+    public Play()
     {
-        int count = 1, previousX = 5, previousY = 5, input = 5;
-        int[] answer = new int[4];
-        String player = "";
+      count = 1;
+      playerTurn = "";
+    }
+    
+    public void playGame()
+    {
+        int previousX = 5, previousY = 5, input = 5;
+        int[] answer;
         MasterArray game1 = new MasterArray();
         ConsoleIO keyboard = new ConsoleIO();
         while (game1.checkWon().equals(" "))
@@ -19,10 +27,12 @@ public class Play
             System.out.println("input: ");
             input = keyboard.readInt();
             answer = game1.inputConvert(input);
+            
             if (count % 2 != 0)
-                player = "X";
+                playerTurn = "X";
             else
-                player = "O";
+                playerTurn = "O";
+                
             if (count != 1)
             {
                 if (game1.getMiniArray(answer[0], answer[1]).getFinishedSquare() != null)
@@ -37,7 +47,8 @@ public class Play
                     }
                     else
                     {
-                        game1.doMove(answer[0], answer[1], answer[3], answer[4], player);
+                        game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
+                        game1.getMiniArray(answer[0], answer[1]).getSquare(answer[3], answer[4]).setStatus(playerTurn);
                         game1.getMiniArray(answer[0], answer[1]).checkWon();
                     }
                 }
@@ -47,4 +58,6 @@ public class Play
             count++;
         }
     }
+    
+ 
 }
