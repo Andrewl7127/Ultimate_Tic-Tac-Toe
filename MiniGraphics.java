@@ -5,12 +5,12 @@ import javafx.scene.layout.GridPane;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class MasterGraphics extends GridPane
+public class MiniGraphics extends GridPane
 {
     /**
      * Constructor for objects of class BigSquareGraphics
      */
-    public MasterGraphics(MasterSquare master)
+    public MiniGraphics(MiniArray master)
     {
         for(int row = 0; row < 3; row++)
         {

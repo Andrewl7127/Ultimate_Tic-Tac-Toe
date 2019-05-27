@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 public class MasterSquare
 {
     // instance variables - replace the example below with your own
-    private MasterGraphics graphics;
+    private MiniGraphics graphics;
     private Square[][] master = new Square[3][3];
     /**
      * Constructor for objects of class MasterSquare

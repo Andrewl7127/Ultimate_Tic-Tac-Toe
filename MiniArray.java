@@ -1,4 +1,4 @@
-
+import javafx.scene.Parent;
 /**
  * Write a description of class MiniArray here.
  *
@@ -9,6 +9,8 @@ public class MiniArray
 {
     private String [][] miniTicTac; 
     private String finishedSquare;
+    private Square[][] mini = new Square[3][3];
+    private MiniGraphics graphics;
     
     public MiniArray()
     {
@@ -18,6 +20,17 @@ public class MiniArray
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
             miniTicTac[row][col] = " ";
+            
+      for(int r = 0; r < 3; r++)
+        {
+            for(int c = 0; c < 3; c++)
+            {
+                mini[r][c] = new Square();
+            }
+        }
+        
+      
+      graphics = new MiniGraphics(this);
     }
     
     /**
@@ -150,5 +163,15 @@ public class MiniArray
     {
         return finishedSquare;
         
+    }
+    
+    public Square getSquare(int row, int col)
+    {
+        return mini[row][col];
+    }
+    
+    public Parent getGraphics()
+    {
+        return graphics;
     }
 }
