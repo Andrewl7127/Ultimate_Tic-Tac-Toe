@@ -176,6 +176,7 @@ public class MasterArray
           case 27:
             answer[0] = 0;
             answer[1] = 2;
+            break;
           case 28:
           case 29:      
           case 30:
@@ -245,5 +246,50 @@ public class MasterArray
           default: 
             throw new IllegalArgumentException();
         }
+        
+        input %=9;
+        
+        switch(input)
+        {
+           case 1:
+               answer[2] = 0;
+               answer[3] = 0;
+               break;
+           case 2:
+               answer[2] = 0;
+               answer[3] =1;
+               break;
+           case 3:
+              answer[2] = 0;
+              answer[3] = 2;
+              break;
+           case 4:
+              answer[2] = 1;
+              answer[3] = 0;
+              break;
+           case 5:
+              answer[2] = 1;
+              answer [3] = 1;
+              break;
+           case 6:
+              answer[2] = 1;
+              answer [3] = 2;
+              break;
+           case 7: 
+             answer[2] = 2;
+             answer [3] = 0;
+             break;
+           case 8:
+             answer[2] = 2;
+             answer [3] = 1;
+             break;
+           case 0:
+            answer[2] = 2;
+            answer [3] = 2;
+            break;
+           default:
+            throw new IllegalArgumentException();
+        }
+        return answer;
     }
 }
