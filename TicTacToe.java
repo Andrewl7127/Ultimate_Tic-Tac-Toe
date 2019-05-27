@@ -14,7 +14,7 @@ public class TicTacToe extends Application
     @Override public void start(Stage primaryStage)
     {
         //need to get new scene(getGraphics from new Board)
-        Board myBoard = new Board();
+        MasterArray myBoard = new MasterArray();
         Scene myScene = new Scene(myBoard.getGraphics());
         myScene.getStylesheets().add(getResource("Graphics.css"));
            
