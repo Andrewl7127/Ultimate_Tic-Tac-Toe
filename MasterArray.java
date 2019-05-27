@@ -139,24 +139,157 @@ public class MasterArray
     {
         int[] answer = new int[4];
         
-        answer[0] = input/27;
-        
-        int temp = input % 9;
-        if (temp == 1 || temp == 2 || temp == 3)
-            answer[1] = 0;
-        if (temp == 4 || temp == 5 || temp == 6)
-            answer[1] = 1;
-        if (temp == 7 || temp == 8 || temp == 0)
+        switch(input)
+        {
+          case 1:
+          case 2:
+          case 3:
+          case 4: 
+          case 5: 
+          case 6: 
+          case 7:
+          case 8:
+          case 9:
+            answer[0] = 0;
+            answer [1]= 0;
+            break;
+          case 10:
+          case 11:
+          case 12:
+          case 13:
+          case 14: 
+          case 15:
+          case 16:
+          case 17:
+          case 18:
+            answer[0] = 0;
+            answer [1] = 1;
+            break;
+          case 19:
+          case 20:
+          case 21:
+          case 22:
+          case 23:
+          case 24: 
+          case 25:
+          case 26:
+          case 27:
+            answer[0] = 0;
             answer[1] = 2;
-        answer[2] = input / 9 % 3;
-        temp = input % 3;
-        if (temp == 1)
-            answer[3] = 0;
-        if (temp == 2)
-            answer[3] = 1;
-        if (temp == 0)
-            answer[3] = 2;
+            break;
+          case 28:
+          case 29:      
+          case 30:
+          case 31:
+          case 32:
+          case 33:
+          case 34: 
+          case 35:
+          case 36:
+            answer[0] = 1;
+            answer[1] = 0;
+          case 37:
+          case 38:
+          case 39:
+          case 40:  
+          case 41:
+          case 42:
+          case 43:
+          case 44: 
+          case 45:
+            answer[0] = 1;
+            answer[1] = 1;
+          case 46: 
+          case 47:
+          case 48:
+          case 49:  
+          case 50:  
+          case 51:
+          case 52:
+          case 53:
+          case 54: 
+             answer[0] = 1;
+            answer[1] = 2;
+          case 55: 
+          case 56: 
+          case 57:
+          case 58:
+          case 59:
+          case 60:
+          case 61:
+          case 62:
+          case 63:
+             answer[0] = 2;
+            answer[1] = 0;
+          case 64: 
+          case 65: 
+          case 66: 
+          case 67:
+          case 68:
+          case 69:
+          case 70:
+          case 71:
+          case 72:
+            answer[0] = 2;
+            answer[1] = 1;
+          case 73:
+          case 74: 
+          case 75: 
+          case 76: 
+          case 77:
+          case 78:
+          case 79:
+          case 80:
+          case 81:
+            answer[0] = 2;
+            answer[1] = 2;
+          default: 
+            throw new IllegalArgumentException();
+        }
         
+        input %=9;
+        
+        switch(input)
+        {
+           case 1:
+               answer[2] = 0;
+               answer[3] = 0;
+               break;
+           case 2:
+               answer[2] = 0;
+               answer[3] =1;
+               break;
+           case 3:
+              answer[2] = 0;
+              answer[3] = 2;
+              break;
+           case 4:
+              answer[2] = 1;
+              answer[3] = 0;
+              break;
+           case 5:
+              answer[2] = 1;
+              answer [3] = 1;
+              break;
+           case 6:
+              answer[2] = 1;
+              answer [3] = 2;
+              break;
+           case 7: 
+             answer[2] = 2;
+             answer [3] = 0;
+             break;
+           case 8:
+             answer[2] = 2;
+             answer [3] = 1;
+             break;
+           case 0:
+            answer[2] = 2;
+            answer [3] = 2;
+            break;
+           default:
+            throw new IllegalArgumentException();
+        }
         return answer;
     }
 }
