@@ -1,4 +1,4 @@
-
+import javafx.scene.Parent;
 /**
  * Write a description of class MasterArray here.
  *
@@ -8,6 +8,8 @@
 public class MasterArray
 {
     private MiniArray [][] bigTicTac; 
+    private MiniArray[][] board = new MiniArray[3][3];
+    private BoardGraphics graphics;
     
     public MasterArray()
     {
@@ -16,6 +18,16 @@ public class MasterArray
       for (int row = 0; row < bigTicTac.length; row++)
         for(int col = 0; col < bigTicTac[0].length; col++)
             bigTicTac[row][col] = new MiniArray();
+            
+      for(int r = 0; r < 3; r++)
+        {
+            for(int c = 0; c < 3; c++)
+            {
+                board[r][c] = new MiniArray();
+            }
+        }
+        
+        graphics = new BoardGraphics(this);
     }
     
     /**
@@ -158,5 +170,15 @@ public class MasterArray
             answer[3] = 2;
         
         return answer;
+    }
+    
+    public MiniArray getSquare(int row, int col)
+    {
+        return board[row][col];
+    }
+    
+    public Parent getGraphics()
+    {
+        return graphics;
     }
 }
