@@ -236,7 +236,7 @@ public class MasterArray
           case 52:
           case 53:
           case 54: 
-             answer[0] = 1;
+            answer[0] = 1;
             answer[1] = 2;
             break;
           case 55: 
@@ -248,7 +248,7 @@ public class MasterArray
           case 61:
           case 62:
           case 63:
-             answer[0] = 2;
+            answer[0] = 2;
             answer[1] = 0;
             break;
           case 64: 

@@ -9,12 +9,16 @@ public class Play
 {
     private String playerTurn;
     private int count;
+    private int previousX;
+    private int previousY;
     MasterArray game1;
     public Play()
     {
       count = 1;
       playerTurn = "";
       game1 = new MasterArray(this);
+      previousX = 5;
+      previousY = 5;
     }
     
     public MasterArray getMA()
@@ -24,7 +28,7 @@ public class Play
     
     public void playGame(Square square)
     {
-        int previousX = 5, previousY = 5;
+   
         int[] answer;
         
         if(game1.checkWon().equals(" "))
@@ -38,7 +42,7 @@ public class Play
                 
             if (count != 1)
             {
-                if (game1.getMiniArray(answer[0], answer[1]).getFinishedSquare() != null)
+                if (!game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                 {
                     //reprompt
                 }
