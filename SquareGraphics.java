@@ -41,13 +41,28 @@ public class SquareGraphics extends StackPane
     getChildren().setAll(imageView); //adds imageView as children
     
     //set size of square
-    setPrefSize(crossImage.getHeight() + 20, crossImage.getHeight() + 20);
+    setPrefSize(crossImage.getHeight()/2, crossImage.getHeight()/2);
         
         
      setOnMousePressed(new EventHandler<MouseEvent>() 
      {
       @Override public void handle(MouseEvent mouseEvent) {
-        square.clicked();
+        square.clicked(square.getPlay());
+        Square squarey = square;
+        if(square.getStatus().equals(" "))
+            imageView.setImage(null); 
+        if(square.getStatus().equals("X"))
+        {    
+            imageView.setImage(crossImage);
+            imageView.setFitWidth(50);
+            imageView.setFitHeight(50);
+        }
+        if(square.getStatus().equals("O"))
+        {    
+            imageView.setImage(noughtImage);
+            imageView.setFitWidth(50);
+            imageView.setFitHeight(50);
+        }
       }
      });
     

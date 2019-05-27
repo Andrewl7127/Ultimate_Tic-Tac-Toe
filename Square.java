@@ -10,20 +10,29 @@ public class Square
 {
     private SquareGraphics mySquare;
     private int input;
+    private String myStatus;
+    private Play bruh;
     
     /**
      * Constructor for objects of class Square
      */
-    public Square()
+    public Square(Play game)
     {
         mySquare = new SquareGraphics(this);
         input = 1;
+        myStatus = " ";
+        bruh = game;
     }
     
-    
-    public void clicked()
+    public Play getPlay()
     {
-        //call PlayerStatus class method to switch players
+        return bruh;
+    }
+    
+    public void clicked(Play game)
+    {
+        game.playGame(this);
+        
     }
     
     public Node getGraphics()
@@ -39,5 +48,15 @@ public class Square
     public void setInput(int n)
     {
         input = n;
+    }
+    
+    public void setStatus(String status)
+    {  
+        myStatus = status;
+    }
+    
+    public String getStatus()
+    {
+        return myStatus;
     }
 }

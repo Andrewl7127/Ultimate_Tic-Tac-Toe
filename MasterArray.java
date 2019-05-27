@@ -11,20 +11,22 @@ public class MasterArray
     private MiniArray[][] board = new MiniArray[3][3];
     private BoardGraphics graphics;
     private int num;
-    public MasterArray()
+    private Play bruh;
+    
+    public MasterArray(Play game)
     {
       bigTicTac = new MiniArray [3][3];
       num = 0;
-      
+      bruh = game;
       for (int row = 0; row < bigTicTac.length; row++)
         for(int col = 0; col < bigTicTac[0].length; col++)
-            bigTicTac[row][col] = new MiniArray();
+            bigTicTac[row][col] = new MiniArray(bruh);
             
       for(int r = 0; r < 3; r++)
         {
             for(int c = 0; c < 3; c++)
             {
-                board[r][c] = new MiniArray();
+                board[r][c] = new MiniArray(bruh);
                 
                 for(int r2 = 0; r2 < 3; r2++)
                 {
@@ -51,7 +53,7 @@ public class MasterArray
      */
     public void doMove(int x1, int y1, int x, int y, String player)
     {
-        if(bigTicTac[x1][y1].getFinishedSquare().equals(" "))
+        if(!bigTicTac[x1][y1].getFinishedSquare().equals(" "))
             throw new IllegalArgumentException();
         bigTicTac[x1][y1].doMove(x, y, player);
     }
@@ -212,6 +214,7 @@ public class MasterArray
           case 36:
             answer[0] = 1;
             answer[1] = 0;
+            break;
           case 37:
           case 38:
           case 39:
@@ -223,6 +226,7 @@ public class MasterArray
           case 45:
             answer[0] = 1;
             answer[1] = 1;
+            break;
           case 46: 
           case 47:
           case 48:
@@ -232,8 +236,9 @@ public class MasterArray
           case 52:
           case 53:
           case 54: 
-             answer[0] = 1;
+            answer[0] = 1;
             answer[1] = 2;
+            break;
           case 55: 
           case 56: 
           case 57:
@@ -243,8 +248,9 @@ public class MasterArray
           case 61:
           case 62:
           case 63:
-             answer[0] = 2;
+            answer[0] = 2;
             answer[1] = 0;
+            break;
           case 64: 
           case 65: 
           case 66: 
@@ -256,6 +262,7 @@ public class MasterArray
           case 72:
             answer[0] = 2;
             answer[1] = 1;
+            break;
           case 73:
           case 74: 
           case 75: 
@@ -267,6 +274,7 @@ public class MasterArray
           case 81:
             answer[0] = 2;
             answer[1] = 2;
+            break;
           default: 
             throw new IllegalArgumentException();
         }
@@ -326,4 +334,5 @@ public class MasterArray
     {
         return graphics;
     }
+    
 }
