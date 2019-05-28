@@ -46,7 +46,7 @@ public class Play
             if (state)
             {
               if (game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
-              {
+               {
                  makeTurn(answer, playerTurn, square);
                 previousX = answer[2];
                 previousY = answer[3];
@@ -64,8 +64,10 @@ public class Play
                 {
                      if (answer[0] != previousX || answer[1] != previousY)
                     {
+                        System.out.print("dhadosfh");
                         if(game1.getMiniArray(answer[0], answer[1]).checkWon())
                         {
+                            System.out.println("hfowfn");
                             makeTurn(answer, playerTurn, square);
                             previousX = answer[2];
                             previousY = answer[3];
@@ -92,7 +94,7 @@ public class Play
               
         }
             
-        }
+     }
          
         private void makeTurn(int [] temp, String player, Square current)
         {
@@ -100,6 +102,6 @@ public class Play
               current.setStatus(playerTurn);
               state = game1.getMiniArray(temp[0], temp[1]).checkWon();
     
-        }
+     }
   }
     
