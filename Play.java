@@ -64,7 +64,14 @@ public class Play
                 {
                      if (answer[0] != previousX || answer[1] != previousY)
                     {
-                        //reprompt
+                        if(game1.getMiniArray(answer[0], answer[1]).checkWon())
+                        {
+                            makeTurn(answer, playerTurn, square);
+                            previousX = answer[2];
+                            previousY = answer[3];
+                            count++;  
+                    
+                        }
                     }
                     else
                     {
