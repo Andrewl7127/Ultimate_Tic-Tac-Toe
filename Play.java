@@ -12,6 +12,8 @@ public class Play
     private int previousX;
     private int previousY;
     MasterArray game1;
+    boolean state;
+    
     public Play()
     {
       count = 1;
@@ -19,6 +21,7 @@ public class Play
       game1 = new MasterArray(this);
       previousX = 5;
       previousY = 5;
+      state = false;
     }
     
     public MasterArray getMA()
@@ -39,12 +42,23 @@ public class Play
                 playerTurn = "X";
             else
                 playerTurn = "O";
-                
+            
+            if (state)
+            {
+              if (game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
+              {
+                 makeTurn(answer, playerTurn, square);
+                previousX = answer[2];
+                previousY = answer[3];
+                count++;   
+                }
+
+            }
             if (count != 1)
             {
                 if (!game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                 {
-                    //reprompt
+                    
                 }
                 else
                 {
@@ -77,8 +91,8 @@ public class Play
         {
               game1.doMove(temp[0], temp[1], temp[2], temp[3], player);
               current.setStatus(playerTurn);
-              game1.getMiniArray(temp[0], temp[1]).checkWon();
+              state = game1.getMiniArray(temp[0], temp[1]).checkWon();
     
         }
- }
+  }
     
