@@ -54,17 +54,7 @@ public class Play
                     }
                     else
                     {
-                     game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
-                     square.setStatus(playerTurn);
-                     game1.getMiniArray(answer[0], answer[1]).checkWon();
-                 
-                     /*
-                     MiniArray temp = game1.getMiniArray(answer[0], answer[1]);
-                    Square temp2 = temp.getSquare(answer[2], answer[3]);
-                    temp2.setStatus(playerTurn);
-                   
-                    temp.checkWon();
-                    */ 
+                     makeTurn(answer, playerTurn, square);
                     previousX = answer[2];
                     previousY = answer[3];
                     count++; 
@@ -73,10 +63,7 @@ public class Play
             }
             else
             {
-                game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
-                square.setStatus(playerTurn);
-                game1.getMiniArray(answer[0], answer[1]).checkWon();
-                
+                makeTurn(answer, playerTurn, square);
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;  
@@ -84,6 +71,14 @@ public class Play
               
         }
             
+        }
+         
+        private void makeTurn(int [] temp, String player, Square current)
+        {
+              game1.doMove(temp[0], temp[1], temp[2], temp[3], player);
+              current.setStatus(playerTurn);
+              game1.getMiniArray(temp[0], temp[1]).checkWon();
+    
         }
  }
     
