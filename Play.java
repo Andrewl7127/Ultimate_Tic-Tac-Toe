@@ -65,7 +65,7 @@ public class Play
                      if (answer[0] != previousX || answer[1] != previousY)
                     {
                         System.out.print("dhadosfh");
-                        if(game1.getMiniArray(answer[0], answer[1]).checkWon())
+                        if(game1.getMiniArray(previousX, previousY).checkWon())
                         {
                             System.out.println("hfowfn");
                             makeTurn(answer, playerTurn, square);
