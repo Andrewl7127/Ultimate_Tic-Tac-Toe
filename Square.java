@@ -11,7 +11,7 @@ public class Square
     private SquareGraphics mySquare;
     private int input;
     private String myStatus;
-    private Play bruh;
+    private Play myGame;
     
     /**
      * Constructor for objects of class Square
@@ -21,12 +21,12 @@ public class Square
         mySquare = new SquareGraphics(this);
         input = 1;
         myStatus = " ";
-        bruh = game;
+        myGame = game;
     }
     
     public Play getPlay()
     {
-        return bruh;
+        return myGame;
     }
     
     public void clicked(Play game)

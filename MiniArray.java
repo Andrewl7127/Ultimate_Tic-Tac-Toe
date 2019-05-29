@@ -12,7 +12,7 @@ public class MiniArray
     private Square[][] mini;
     private MiniGraphics graphics;
     private int n;
-    private Play bruh;
+    private Play myGame;
     
     public MiniArray(Play game)
     {
@@ -20,7 +20,7 @@ public class MiniArray
       mini = new Square[3][3];
       finishedSquare = " ";
       n = 1;
-      bruh = game;
+      myGame = game;
       
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)

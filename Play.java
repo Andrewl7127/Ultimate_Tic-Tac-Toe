@@ -12,6 +12,8 @@ public class Play
     private int previousX;
     private int previousY;
     MasterArray game1;
+    boolean state;
+    
     public Play()
     {
       count = 1;
@@ -19,6 +21,7 @@ public class Play
       game1 = new MasterArray(this);
       previousX = 5;
       previousY = 5;
+      state = false;
     }
     
     public MasterArray getMA()
@@ -39,32 +42,42 @@ public class Play
                 playerTurn = "X";
             else
                 playerTurn = "O";
-                
+            
+            if (state)
+            {
+              if (game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
+               {
+                 makeTurn(answer, playerTurn, square);
+                previousX = answer[2];
+                previousY = answer[3];
+                count++;   
+                }
+
+            }
             if (count != 1)
             {
                 if (!game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                 {
-                    //reprompt
+                    
                 }
                 else
                 {
                      if (answer[0] != previousX || answer[1] != previousY)
                     {
-                        //reprompt
+                        System.out.print("dhadosfh");
+                        if(game1.getMiniArray(previousX, previousY).checkWon())
+                        {
+                            System.out.println("hfowfn");
+                            makeTurn(answer, playerTurn, square);
+                            previousX = answer[2];
+                            previousY = answer[3];
+                            count++;  
+                    
+                        }
                     }
                     else
                     {
-                     game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
-                     square.setStatus(playerTurn);
-                     game1.getMiniArray(answer[0], answer[1]).checkWon();
-                 
-                     /*
-                     MiniArray temp = game1.getMiniArray(answer[0], answer[1]);
-                    Square temp2 = temp.getSquare(answer[2], answer[3]);
-                    temp2.setStatus(playerTurn);
-                   
-                    temp.checkWon();
-                    */ 
+                     makeTurn(answer, playerTurn, square);
                     previousX = answer[2];
                     previousY = answer[3];
                     count++; 
@@ -73,10 +86,7 @@ public class Play
             }
             else
             {
-                game1.doMove(answer[0], answer[1], answer[2], answer[3], playerTurn);
-                square.setStatus(playerTurn);
-                game1.getMiniArray(answer[0], answer[1]).checkWon();
-                
+                makeTurn(answer, playerTurn, square);
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;  
@@ -84,6 +94,14 @@ public class Play
               
         }
             
-        }
- }
+     }
+         
+        private void makeTurn(int [] temp, String player, Square current)
+        {
+              game1.doMove(temp[0], temp[1], temp[2], temp[3], player);
+              current.setStatus(playerTurn);
+              state = game1.getMiniArray(temp[0], temp[1]).checkWon();
+    
+     }
+  }
     
