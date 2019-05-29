@@ -54,14 +54,14 @@ public class SquareGraphics extends StackPane
         if(square.getStatus().equals("X"))
         {    
             imageView.setImage(crossImage);
-            imageView.setFitWidth(50);
-            imageView.setFitHeight(50);
+            imageView.setFitWidth(40);
+            imageView.setFitHeight(40);
         }
         if(square.getStatus().equals("O"))
         {    
             imageView.setImage(noughtImage);
-            imageView.setFitWidth(50);
-            imageView.setFitHeight(50);
+            imageView.setFitWidth(40);
+            imageView.setFitHeight(40);
         }
       }
      });
