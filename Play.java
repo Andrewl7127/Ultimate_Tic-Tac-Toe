@@ -93,7 +93,17 @@ public class Play
             } 
               
         }
-            
+        
+        for(int r = 0; r < 3; r++)
+        {
+            for(int c = 0; c < 3; c++)
+            {
+                if(game1.getMiniArray(r, c).getFinishedSquare().equals("X"))
+                    game1.getMiniArray(r, c).colorMini("X");
+                if(game1.getMiniArray(r, c).getFinishedSquare().equals("O"))
+                    game1.getMiniArray(r, c).colorMini("O");
+            }
+        }
      }
          
         private void makeTurn(int [] temp, String player, Square current)
