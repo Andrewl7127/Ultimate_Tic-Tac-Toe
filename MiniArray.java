@@ -184,6 +184,12 @@ public class MiniArray
     
     public void colorMini(String winner)
     {
-        for(int 
+        for(int r = 0; r < 3; r++)
+        {
+            for(int c = 0; c < 3; c++)
+            {
+                ((SquareGraphics)mini[r][c].getGraphics()).changeColor(winner); 
+            }
+        }
     }
 }

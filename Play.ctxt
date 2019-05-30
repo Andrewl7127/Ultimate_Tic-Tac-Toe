@@ -9,4 +9,6 @@ comment3.params=square
 comment3.target=void\ playGame(Square)
 comment4.params=temp\ player\ current
 comment4.target=void\ makeTurn(int[],\ java.lang.String,\ Square)
-numComments=5
+comment5.params=answer
+comment5.target=void\ color(int[])
+numComments=6

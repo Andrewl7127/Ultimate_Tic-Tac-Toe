@@ -32,7 +32,7 @@ public class Play
     public void playGame(Square square)
     {
    
-        int[] answer;
+        int[] answer = new int[4];
         
         if(game1.checkWon().equals(" "))
         {
@@ -91,27 +91,32 @@ public class Play
                 previousY = answer[3];
                 count++;  
             } 
-              
+            
+            color(answer);
         }
         
-        for(int r = 0; r < 3; r++)
-        {
-            for(int c = 0; c < 3; c++)
-            {
-                if(game1.getMiniArray(r, c).getFinishedSquare().equals("X"))
-                    game1.getMiniArray(r, c).colorMini("X");
-                if(game1.getMiniArray(r, c).getFinishedSquare().equals("O"))
-                    game1.getMiniArray(r, c).colorMini("O");
-            }
-        }
+        
+        
      }
          
-        private void makeTurn(int [] temp, String player, Square current)
-        {
+     private void makeTurn(int [] temp, String player, Square current)
+     {
               game1.doMove(temp[0], temp[1], temp[2], temp[3], player);
               current.setStatus(playerTurn);
               state = game1.getMiniArray(temp[0], temp[1]).checkWon();
     
+     }
+     
+     private void color(int[] answer)
+     {
+        if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("X"))
+            game1.getMiniArray(answer[0], answer[1]).colorMini("X");
+        
+        if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("O"))
+            game1.getMiniArray(answer[0], answer[1]).colorMini("O");
+        
+        if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("D"))
+            game1.getMiniArray(answer[0], answer[1]).colorMini("D");
      }
   }
     
