@@ -9,23 +9,55 @@ import java.util.*;
 public class Square
 {
     private SquareGraphics mySquare;
+    private int input;
+    private String myStatus;
+    private Play myGame;
     
     /**
      * Constructor for objects of class Square
      */
-    public Square()
+    public Square(Play game)
     {
         mySquare = new SquareGraphics(this);
+        input = 1;
+        myStatus = " ";
+        myGame = game;
     }
     
-    
-    public void clicked()
+    public Play getPlay()
     {
-        //call PlayerStatus class method to switch players
+        return myGame;
+    }
+    
+    public void clicked(Play game)
+    {
+        game.playGame(this);
+        
     }
     
     public Node getGraphics()
     {
         return mySquare;
     }
+    
+    public int getInput()
+    {
+        return input;
+    }
+    
+    public void setInput(int n)
+    {
+        input = n;
+    }
+    
+    public void setStatus(String status)
+    {  
+        myStatus = status;
+    }
+    
+    public String getStatus()
+    {
+        return myStatus;
+    }
+    
 }

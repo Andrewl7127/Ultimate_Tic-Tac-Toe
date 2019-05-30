@@ -1,11 +1,21 @@
 #BlueJ class context
 comment0.target=Square
 comment0.text=\n\ Write\ a\ description\ of\ class\ Square\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Square()
+comment1.params=game
+comment1.target=Square(Play)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Square\n
 comment2.params=
-comment2.target=void\ clicked()
-comment3.params=
-comment3.target=javafx.scene.Node\ getGraphics()
-numComments=4
+comment2.target=Play\ getPlay()
+comment3.params=game
+comment3.target=void\ clicked(Play)
+comment4.params=
+comment4.target=javafx.scene.Node\ getGraphics()
+comment5.params=
+comment5.target=int\ getInput()
+comment6.params=n
+comment6.target=void\ setInput(int)
+comment7.params=status
+comment7.target=void\ setStatus(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ getStatus()
+numComments=9

@@ -14,13 +14,14 @@ public class TicTacToe extends Application
     @Override public void start(Stage primaryStage)
     {
         //need to get new scene(getGraphics from new Board)
-        Board myBoard = new Board();
-        Scene myScene = new Scene(myBoard.getGraphics());
+        Play game = new Play();
+        Scene myScene = new Scene(game.getMA().getGraphics());
         myScene.getStylesheets().add(getResource("Graphics.css"));
            
         primaryStage.setTitle("Tic-Tac-Toe"); 
         primaryStage.setScene(myScene);
         primaryStage.show();
+        
     }
     
     private String getResource(String resourceName) 

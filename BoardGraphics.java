@@ -12,7 +12,7 @@ public class BoardGraphics extends GridPane
     /**
      * Constructor for objects of class BoardGraphics
      */
-    public BoardGraphics(Board board) 
+    public BoardGraphics(MasterArray board) 
     {
         setVgap(5);
         setHgap(5);
@@ -21,7 +21,7 @@ public class BoardGraphics extends GridPane
         {
             for(int col = 0; col < 3; col++)
             {
-                add(((MasterSquare)board.getSquare(row, col)).getGraphics(), row, col);
+                add(((MiniArray)board.getSquare(row, col)).getGraphics(), row, col);
             }
         }
                 
