@@ -13,7 +13,7 @@ public class Play
     private int previousY;
     MasterArray game1;
     boolean state;
-    final boolean DEBUG = true;
+    private final boolean DEBUG = true;
     
     public Play()
     {
@@ -27,7 +27,7 @@ public class Play
     
     public MasterArray getMA()
     {
-     return game1;   
+       return game1;   
     }
     
     public void playGame(Square square)
@@ -39,17 +39,7 @@ public class Play
         {
             answer = game1.inputConvert(square.getInput());
             
-            if (count % 2 != 0)
-            {
-                playerTurn = "X";
-                if(DEBUG)
-                    System.out.println("1. Changed to X");
-            }
-            else{
-                playerTurn = "O";
-                if(DEBUG)
-                    System.out.println("1. Changed to O");
-            }
+            helpChange(count);
             
             if (state)
             {
@@ -66,16 +56,7 @@ public class Play
 
             }
             
-            if (count % 2 != 0)
-            {
-                playerTurn = "X";
-                System.out.println("2. Changed to X");
-            }
-            else
-            {
-                playerTurn = "O";
-                System.out.println("2. Changed to O");
-            }
+            helpChange(count);
                 
             if (count != 1)
             {
@@ -142,5 +123,22 @@ public class Play
         if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("D"))
             game1.getSquare(answer[0], answer[1]).colorMini("D");
      }
+     
+     private void helpChange(int count)
+     {
+        if (count % 2 != 0)
+            {
+                playerTurn = "X";
+                if(DEBUG)
+                    System.out.println("Changed to X");
+            }
+            else
+            {
+                playerTurn = "O";
+                if(DEBUG)
+                    System.out.println("Changed to O");
+            } 
+         
+        }
   }
     

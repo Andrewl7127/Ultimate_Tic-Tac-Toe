@@ -11,4 +11,6 @@ comment4.params=temp\ player\ current
 comment4.target=void\ makeTurn(int[],\ java.lang.String,\ Square)
 comment5.params=answer
 comment5.target=void\ color(int[])
-numComments=6
+comment6.params=count
+comment6.target=void\ helpChange(int)
+numComments=7

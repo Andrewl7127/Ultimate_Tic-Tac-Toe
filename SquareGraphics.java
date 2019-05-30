@@ -88,7 +88,6 @@ public class SquareGraphics extends StackPane
     
     public void changeColor(String winner)
     {
-        System.out.println(winner);
         if(winner.equals("X"))
         {
             imageView.setImage(blue);
