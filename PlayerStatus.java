@@ -17,15 +17,26 @@ public class PlayerStatus extends HBox
       "http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/128/blue-cross-icon.png"
   );
         private final ImageView imageView = new ImageView();
+        private final Label playerLabel = new Label("Current Player: ");
     public PlayerStatus()
     {
-        
+        imageView.setMouseTransparent(true);
+        getChildren().setAll(imageView);
         
         
     }
     
-    public void currentPlayer()
+    public void currentPlayerX()
     {
-       
+       imageView.setImage(crossImage);
+       imageView.setFitWidth(40);
+       imageView.setFitHeight(40);
+    }
+    
+    public void currentPlayerO()
+    {
+        imageView.setImage(noughtImage);
+        imageView.setFitWidth(40);
+        imageView.setFitHeight(40);
     }
 }
