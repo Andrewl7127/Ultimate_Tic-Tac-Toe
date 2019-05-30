@@ -161,7 +161,12 @@ public class MiniArray
                miniTicTac[row][col].equals("O")))
                 return false;
       
-      finishedSquare = "D";          
+    if(finishedSquare.equals(" "))
+      {
+      finishedSquare = "D";  
+      return true;
+    }
+    else
       return true;
 
     }
