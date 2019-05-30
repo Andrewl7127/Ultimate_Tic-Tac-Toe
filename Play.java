@@ -33,13 +33,17 @@ public class Play
     {
    
         int[] answer = new int[4];
-        
+        PlayerStatus stauts = new PlayerStatus();
         if(game1.checkWon().equals(" "))
         {
             answer = game1.inputConvert(square.getInput());
             
             if (count % 2 != 0)
+            {
                 playerTurn = "X";
+                stauts.currentPlayerX();
+                System.out.print("x image");
+            }
             else
                 playerTurn = "O";
             

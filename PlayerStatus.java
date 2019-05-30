@@ -21,7 +21,7 @@ public class PlayerStatus extends HBox
     public PlayerStatus()
     {
         imageView.setMouseTransparent(true);
-        getChildren().setAll(imageView);
+        getChildren().setAll(playerLabel, imageView);
         
         
     }
@@ -29,8 +29,8 @@ public class PlayerStatus extends HBox
     public void currentPlayerX()
     {
        imageView.setImage(crossImage);
-       imageView.setFitWidth(40);
-       imageView.setFitHeight(40);
+       imageView.setFitWidth(10);
+       imageView.setFitHeight(10);
     }
     
     public void currentPlayerO()
