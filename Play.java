@@ -70,10 +70,8 @@ public class Play
                 {
                      if (answer[0] != previousX || answer[1] != previousY)
                     {
-                        System.out.print("dhadosfh");
                         if(game1.getMiniArray(previousX, previousY).checkWon())
                         {
-                            System.out.println("hfowfn");
                             makeTurn(answer, playerTurn, square);
                             previousX = answer[2];
                             previousY = answer[3];
@@ -115,13 +113,13 @@ public class Play
      private void color(int[] answer)
      {
         if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("X"))
-            game1.getMiniArray(answer[0], answer[1]).colorMini("X");
+            game1.getSquare(answer[0], answer[1]).colorMini("X");
         
         if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("O"))
-            game1.getMiniArray(answer[0], answer[1]).colorMini("O");
+            game1.getSquare(answer[0], answer[1]).colorMini("O");
         
         if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("D"))
-            game1.getMiniArray(answer[0], answer[1]).colorMini("D");
+            game1.getSquare(answer[0], answer[1]).colorMini("D");
      }
   }
     

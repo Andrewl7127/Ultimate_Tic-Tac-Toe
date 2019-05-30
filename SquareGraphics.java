@@ -59,24 +59,28 @@ public class SquareGraphics extends StackPane
      setOnMousePressed(new EventHandler<MouseEvent>() 
      {
       @Override public void handle(MouseEvent mouseEvent) {
-        square.clicked(square.getPlay());
-        Square squarey = square;
+        if (square.getStatus().equals(" "))
+        {
+         square.clicked(square.getPlay());
+         Square squarey = square;
         if(square.getStatus().equals(" "))
             imageView.setImage(null); 
-        if(square.getStatus().equals("X"))
+        if(square.getStatus().equals("X") && imageView.getImage() == null)
         {    
             imageView.setImage(crossImage);
             imageView.setFitWidth(40);
             imageView.setFitHeight(40);
         }
         
-        if(square.getStatus().equals("O"))
+        if(square.getStatus().equals("O") && imageView.getImage() == null)
         {    
             imageView.setImage(noughtImage);
             imageView.setFitWidth(40);
             imageView.setFitHeight(40);
         }
       }
+    }
+    
      });
       
      
@@ -88,22 +92,22 @@ public class SquareGraphics extends StackPane
         if(winner.equals("X"))
         {
             imageView.setImage(blue);
-            imageView.setFitWidth(40);
-            imageView.setFitHeight(40);
+            imageView.setFitWidth(62);
+            imageView.setFitHeight(62);
         }
         
         if(winner.equals("O"))
         {
             imageView.setImage(green);
-            imageView.setFitWidth(40);
-            imageView.setFitHeight(40);
+            imageView.setFitWidth(62);
+            imageView.setFitHeight(62);
         }
         
         if(winner.equals("D"))
         {
             imageView.setImage(gray);
-            imageView.setFitWidth(40);
-            imageView.setFitHeight(40);
+            imageView.setFitWidth(62);
+            imageView.setFitHeight(62);
         }
     }
 }
