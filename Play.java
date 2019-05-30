@@ -32,7 +32,7 @@ public class Play
     public void playGame(Square square)
     {
    
-        int[] answer;
+        int[] answer = new int[4];
         
         if(game1.checkWon().equals(" "))
         {
@@ -45,15 +45,21 @@ public class Play
             
             if (state)
             {
-              if (game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
+              if (answer[0] == previousX && answer[1] == previousY && game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                {
-                 makeTurn(answer, playerTurn, square);
+                makeTurn(answer, playerTurn, square);
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;   
                 }
 
             }
+            
+            if (count % 2 != 0)
+                playerTurn = "X";
+            else
+                playerTurn = "O";
+                
             if (count != 1)
             {
                 if (!game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
@@ -91,17 +97,31 @@ public class Play
                 previousY = answer[3];
                 count++;  
             } 
-              
+            color(answer);
         }
-            
+        
+        
+        
      }
          
-        private void makeTurn(int [] temp, String player, Square current)
-        {
+     private void makeTurn(int [] temp, String player, Square current)
+     {
               game1.doMove(temp[0], temp[1], temp[2], temp[3], player);
               current.setStatus(playerTurn);
               state = game1.getMiniArray(temp[0], temp[1]).checkWon();
     
+     }
+     
+     private void color(int[] answer)
+     {
+        if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("X"))
+            game1.getMiniArray(answer[0], answer[1]).colorMini("X");
+        
+        if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("O"))
+            game1.getMiniArray(answer[0], answer[1]).colorMini("O");
+        
+        if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("D"))
+            game1.getMiniArray(answer[0], answer[1]).colorMini("D");
      }
   }
     

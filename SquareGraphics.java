@@ -22,7 +22,19 @@ public class SquareGraphics extends StackPane
   static final Image crossImage = new Image(
       "http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/128/blue-cross-icon.png"
   );
-  
+   
+    static final Image blue = new Image(
+    "https://rlv.zcache.com.au/solid_blue_solid_background_solid_color_square_sticker-rc755b95b45bb48888138093c66cfeea3_v9wf3_8byvr_307.jpg?rvtype=content"
+    );
+    
+    static final Image green = new Image(
+    "https://re-mm-assets.s3.amazonaws.com/product_photo/21547/large_Poly_NeonGreen_375u_1471502194.jpg"
+    );
+    
+    static final Image gray = new Image(
+    "https://rlv.zcache.ca/glacier_gray_grey_trend_color_background_square_sticker-r4921143c931140039a82119823021dac_v9wf3_8byvr_307.jpg?rvtype=content"
+    );
+    
   //ImageView = allows Image objects to be used
   //need this variable to add the X or O
   private final ImageView imageView = new ImageView();
@@ -54,21 +66,46 @@ public class SquareGraphics extends StackPane
         if(square.getStatus().equals("X"))
         {    
             imageView.setImage(crossImage);
-            imageView.setFitWidth(50);
-            imageView.setFitHeight(50);
+            imageView.setFitWidth(40);
+            imageView.setFitHeight(40);
         }
+        
         if(square.getStatus().equals("O"))
         {    
             imageView.setImage(noughtImage);
-            imageView.setFitWidth(50);
-            imageView.setFitHeight(50);
+            imageView.setFitWidth(40);
+            imageView.setFitHeight(40);
         }
       }
      });
-    
+      
+     
     }
     
-    
+    public void changeColor(String winner)
+    {
+        System.out.println(winner);
+        if(winner.equals("X"))
+        {
+            imageView.setImage(blue);
+            imageView.setFitWidth(40);
+            imageView.setFitHeight(40);
+        }
+        
+        if(winner.equals("O"))
+        {
+            imageView.setImage(green);
+            imageView.setFitWidth(40);
+            imageView.setFitHeight(40);
+        }
+        
+        if(winner.equals("D"))
+        {
+            imageView.setImage(gray);
+            imageView.setFitWidth(40);
+            imageView.setFitHeight(40);
+        }
+    }
 }
 
     

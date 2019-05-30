@@ -62,7 +62,7 @@ public class MiniArray
      */
     public boolean checkWon()
     {
-      return (checkRow() || checkCol() || checkDraw());
+      return (checkRow() || checkCol() || checkDraw() || checkDiagonal());
         
     }
     
@@ -181,5 +181,15 @@ public class MiniArray
     {
         return graphics;
     }
-
+    
+    public void colorMini(String winner)
+    {
+        for(int r = 0; r < 3; r++)
+        {
+            for(int c = 0; c < 3; c++)
+            {
+                ((SquareGraphics)mini[r][c].getGraphics()).changeColor(winner); 
+            }
+        }
+    }
 }
