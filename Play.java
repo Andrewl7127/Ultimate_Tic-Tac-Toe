@@ -13,6 +13,7 @@ public class Play
     private int previousY;
     MasterArray game1;
     boolean state;
+    final boolean DEBUG = true;
     
     public Play()
     {
@@ -39,9 +40,16 @@ public class Play
             answer = game1.inputConvert(square.getInput());
             
             if (count % 2 != 0)
+            {
                 playerTurn = "X";
-            else
+                if(DEBUG)
+                    System.out.println("1. Changed to X");
+            }
+            else{
                 playerTurn = "O";
+                if(DEBUG)
+                    System.out.println("1. Changed to O");
+            }
             
             if (state)
             {
@@ -51,20 +59,30 @@ public class Play
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;   
+                
+                if(DEBUG)
+                    System.out.print("First if statement run");
                 }
 
             }
             
             if (count % 2 != 0)
+            {
                 playerTurn = "X";
+                System.out.println("2. Changed to X");
+            }
             else
+            {
                 playerTurn = "O";
+                System.out.println("2. Changed to O");
+            }
                 
             if (count != 1)
             {
                 if (!game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                 {
-                    
+                    if(DEBUG)
+                        System.out.println("If statemnt 2");
                 }
                 else
                 {
@@ -76,12 +94,15 @@ public class Play
                             previousX = answer[2];
                             previousY = answer[3];
                             count++;  
+                            
+                             if(DEBUG)
+                                System.out.println("If statemnt 4");
                     
                         }
                     }
                     else
                     {
-                     makeTurn(answer, playerTurn, square);
+                    makeTurn(answer, playerTurn, square);
                     previousX = answer[2];
                     previousY = answer[3];
                     count++; 
