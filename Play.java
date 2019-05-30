@@ -45,15 +45,21 @@ public class Play
             
             if (state)
             {
-              if (game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
+              if (answer[0] == previousX && answer[1] == previousY && game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                {
-                 makeTurn(answer, playerTurn, square);
+                makeTurn(answer, playerTurn, square);
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;   
                 }
 
             }
+            
+            if (count % 2 != 0)
+                playerTurn = "X";
+            else
+                playerTurn = "O";
+                
             if (count != 1)
             {
                 if (!game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
@@ -91,7 +97,6 @@ public class Play
                 previousY = answer[3];
                 count++;  
             } 
-            
             color(answer);
         }
         
