@@ -2,6 +2,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.*;
+import javafx.scene.paint.Color;
 /**
  * Write a description of class PlayerStatus here.
  *
@@ -19,9 +20,12 @@ public class PlayerStatus extends HBox
         private final ImageView imageView = new ImageView();
         private final Label playerLabel = new Label("Current Player: ");
         
+        
     public PlayerStatus()
     {
         playerLabel.getStyleClass().add("info");
+        playerLabel.setTextFill(Color.web("#FAEBD7"));
+         //#0076a3
         imageView.setMouseTransparent(true);
         imageView.setImage(crossImage);
         imageView.setFitWidth(30);
