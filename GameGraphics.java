@@ -10,9 +10,9 @@ import javafx.scene.image.*;
  */
 public class GameGraphics extends VBox
 {
-    public GameGraphics()
+    public GameGraphics(Play game)
     {
-        getChildren().addAll(new PlayerStatus());
+        getChildren().addAll(game.getMA().getGraphics(), new PlayerStatus());
         
     }
 }

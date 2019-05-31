@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=GameGraphics
 comment0.text=\n\ Write\ a\ description\ of\ class\ GameGraphics\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=GameGraphics()
+comment1.params=game
+comment1.target=GameGraphics(Play)
 numComments=2
