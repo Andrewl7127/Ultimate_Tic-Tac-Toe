@@ -12,12 +12,15 @@ public class MasterArray
     private BoardGraphics graphics;
     private int num;
     private Play myGame;
+    private String myWinner;
     
     public MasterArray(Play game)
     {
       bigTicTac = new MiniArray [3][3];
       num = 0;
       myGame = game;
+      myWinner = " ";
+      
       for (int row = 0; row < bigTicTac.length; row++)
         for(int col = 0; col < bigTicTac[0].length; col++)
             bigTicTac[row][col] = new MiniArray(myGame);
@@ -66,26 +69,42 @@ public class MasterArray
     public String checkWon()
     {
       String check = checkRow();
-      if(check.equals("X"))
+      if(check.equals("X")){
+        myWinner = "X";
         return "X";
-      if(check.equals("O"))
+    }
+     
+    if(check.equals("O"))
          return "O";   
         
-      check = checkCol();
-      if(check.equals("X"))
+      check = checkCol(); 
+      if(check.equals("X")){
+        myWinner = "X";
         return "X";
+    }
+    
       if(check.equals("O"))
-         return "O";   
+      {
+          myWinner = "O";
+         return "O"; 
+        }
       
       check = checkDiagonal();
       if(check.equals("X"))
+      {
+          myWinner = "X";
         return "X";
+    }
       if(check.equals("O"))
+      {
+          myWinner = "O";
          return "O";   
-      
+        }
       if(checkDraw())
+      {
+          myWinner = "D";
         return "D";
-    
+    }
       return " ";
         
     }
@@ -144,13 +163,15 @@ public class MasterArray
     
     private boolean checkDraw()
     {
-      boolean flag = true;
+      boolean flag = false;
       
       for (int row = 0; row < bigTicTac.length; row++)
         for(int col = 0; col < bigTicTac[0].length; col++)
             if(!(bigTicTac[row][col].getFinishedSquare().equals("D")))
-                return false;
-                
+                flag = false;
+          
+      if(myWinner.equals(" "))
+        flag = true;
       return flag;
 
     }

@@ -104,10 +104,10 @@ public class Play
                 previousY = answer[3];
                 count++;  
             } 
-            color(answer);
+            
         }
     }
-        
+    color(answer);    
         
         
      }
@@ -123,13 +123,25 @@ public class Play
      private void color(int[] answer)
      {
         if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("X"))
+        {
             game1.getSquare(answer[0], answer[1]).colorMini("X");
+            if(DEBUG)
+            System.out.print("X COLOR RUNS");
+        }
         
         if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("O"))
+        {    
+            if(DEBUG)
+            System.out.print("O COLOR RUNS");
             game1.getSquare(answer[0], answer[1]).colorMini("O");
+        }
         
         if(game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals("D"))
+        {
             game1.getSquare(answer[0], answer[1]).colorMini("D");
+            if(DEBUG)
+            System.out.print("D COLOR RUNS");
+        }
      }
      
      private void helpChange(int count)
