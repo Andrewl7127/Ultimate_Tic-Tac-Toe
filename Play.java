@@ -32,7 +32,6 @@ public class Play
     
     public void playGame(Square square)
     {
-   
         int[] answer = new int[4];
         
         if(game1.checkWon().equals(" "))
@@ -49,15 +48,14 @@ public class Play
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;   
-                
+                helpChange(count);
                 if(DEBUG)
                     System.out.print("First if statement run");
                 }
 
             }
-            
-            helpChange(count);
-                
+            else
+            {
             if (count != 1)
             {
                 if (!game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
@@ -99,6 +97,7 @@ public class Play
             } 
             color(answer);
         }
+    }
         
         
         
