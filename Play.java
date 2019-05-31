@@ -32,8 +32,6 @@ public class Play
     public void playGame(Square square)
     {
         int[] answer = new int[4];
-        PlayerStatus stauts = new PlayerStatus();
-        stauts.currentPlayerX();
         if(game1.checkWon().equals(" "))
         {
             answer = game1.inputConvert(square.getInput());

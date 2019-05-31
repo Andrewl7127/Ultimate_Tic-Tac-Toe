@@ -25,16 +25,17 @@ public class PlayerStatus extends HBox
     {
         playerLabel.getStyleClass().add("info");
         playerLabel.setTextFill(Color.web("#FAEBD7"));
-         //#0076a3
         imageView.setMouseTransparent(true);
         imageView.setImage(crossImage);
         imageView.setFitWidth(30);
         imageView.setFitHeight(30);
         getChildren().addAll(playerLabel, imageView);
-
-        
     }
     
+    public void update(String nextPlayer)
+    {
+        
+    }
     public void currentPlayerX()
     {
        imageView.setImage(crossImage);
