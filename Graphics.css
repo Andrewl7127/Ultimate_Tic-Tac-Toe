@@ -44,3 +44,16 @@
 
   -fx-vgap: 10px;
 }
+
+.playerstatus {
+  -fx-alignment: bottom;
+
+  -fx-padding: 16px;
+
+}
+
+.info {
+
+  -fx-test-fill: white smoke;
+
+}

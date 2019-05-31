@@ -20,15 +20,17 @@ public class PlayerStatus extends HBox
         private final Label playerLabel = new Label("Current Player: ");
     public PlayerStatus()
     {
+        playerLabel.getStyleClass().add("info");
         imageView.setMouseTransparent(true);
-        getChildren().setAll(playerLabel, imageView);
-        
+        getChildren().addAll(playerLabel, imageView);
+        System.out.print("hullloooooooo");
         
     }
     
     public void currentPlayerX()
     {
-       imageView.setImage(crossImage);
+       System.out.print("hullo");
+        imageView.setImage(crossImage);
        imageView.setFitWidth(10);
        imageView.setFitHeight(10);
     }

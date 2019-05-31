@@ -31,9 +31,10 @@ public class Play
     
     public void playGame(Square square)
     {
-   
         int[] answer = new int[4];
         PlayerStatus stauts = new PlayerStatus();
+        stauts.currentPlayerX();
+        System.out.print("x image");
         if(game1.checkWon().equals(" "))
         {
             answer = game1.inputConvert(square.getInput());
@@ -41,8 +42,7 @@ public class Play
             if (count % 2 != 0)
             {
                 playerTurn = "X";
-                stauts.currentPlayerX();
-                System.out.print("x image");
+                
             }
             else
                 playerTurn = "O";

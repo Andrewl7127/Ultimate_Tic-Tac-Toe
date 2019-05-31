@@ -61,6 +61,7 @@ public class SquareGraphics extends StackPane
       @Override public void handle(MouseEvent mouseEvent) {
         square.clicked(square.getPlay());
         Square squarey = square;
+        System.out.print("cool");
         if(square.getStatus().equals(" "))
             imageView.setImage(null); 
         if(square.getStatus().equals("X"))
