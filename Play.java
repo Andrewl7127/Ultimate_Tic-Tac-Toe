@@ -39,9 +39,19 @@ public class Play
             answer = game1.inputConvert(square.getInput());
             
             helpChange(count);
-            
             if (state)
             {
+              if (!game1.getMiniArray(previousX, previousY).getFinishedSquare().equals(" "))
+                  {
+                makeTurn(answer, playerTurn, square);
+                previousX = answer[2];
+                previousY = answer[3];
+                count++;   
+                helpChange(count);
+                if(DEBUG)
+                    System.out.print("First if statement run");
+                }
+                else
               if (answer[0] == previousX && answer[1] == previousY && game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                {
                 makeTurn(answer, playerTurn, square);
@@ -52,7 +62,6 @@ public class Play
                 if(DEBUG)
                     System.out.print("First if statement run");
                 }
-
             }
             else
             {
