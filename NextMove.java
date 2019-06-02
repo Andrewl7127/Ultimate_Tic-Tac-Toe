@@ -65,7 +65,7 @@ public class NextMove extends HBox
                 else
                     temp = "Bottom";
         
-       temp += " ";
+       temp += " Row, ";
        
        if(x==0)
         temp += "Left";
@@ -75,7 +75,7 @@ public class NextMove extends HBox
                 else
                     temp += "Right";
         
-        
+       temp+= " Column";
         return temp;
         
         
