@@ -8,10 +8,11 @@ import javafx.scene.layout.GridPane;
 public class MiniGraphics extends GridPane
 {
     /**
-     * Constructor for objects of class BigSquareGraphics
+     * Constructor for objects of class MiniGraphics
      */
     public MiniGraphics(MiniArray master)
     {
+        //creates 9 square visuals
         for(int row = 0; row < 3; row++)
         {
             for(int col = 0; col < 3; col++)
