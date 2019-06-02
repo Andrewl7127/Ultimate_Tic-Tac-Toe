@@ -63,7 +63,7 @@ public class SquareGraphics extends StackPane
         {
          square.clicked(square.getPlay());
          Square squarey = square;
-        if(square.getStatus().equals(" "))
+        if(square.getStatus().equals(" ") && imageView.getImage() == null)
             imageView.setImage(null); 
         if(square.getStatus().equals("X") && imageView.getImage() == null)
         {    
@@ -88,7 +88,6 @@ public class SquareGraphics extends StackPane
     
     public void changeColor(String winner)
     {
-        System.out.println(winner);
         if(winner.equals("X"))
         {
             imageView.setImage(blue);
