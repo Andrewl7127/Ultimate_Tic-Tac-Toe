@@ -39,10 +39,8 @@ public class NextMove extends HBox
         
            if(master.getMiniArray(prevX, prevY).getFinishedSquare().equals(" "))
         {
-            //new label next move prevX+1. prevY+1
-            coord1 = Integer.toString(prevX+1);
-            coord2 = Integer.toString(prevY + 1);
-            moveLabel.setText("Next Move: " + coord1 + " " + coord2);
+  
+            moveLabel.setText("Next Move: " + getNext(prevX,prevY));
             
         }
         else
@@ -52,6 +50,34 @@ public class NextMove extends HBox
             
         }
     }
+        
+  
+    }
+    
+    private String getNext(int x, int y)
+    {
+       String temp = "";
+       if(y==0)
+        temp = "Top";
+        else
+            if (y==1)
+                temp = "Middle";
+                else
+                    temp = "Bottom";
+        
+       temp += " ";
+       
+       if(x==0)
+        temp += "Left";
+        else
+            if (x==1)
+                temp += "Middle";
+                else
+                    temp += "Right";
+        
+        
+        return temp;
+        
         
     }
 }
