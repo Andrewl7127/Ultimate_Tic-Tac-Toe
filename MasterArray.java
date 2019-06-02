@@ -74,8 +74,10 @@ public class MasterArray
         return "X";
     }
      
-    if(check.equals("O"))
+    if(check.equals("O")){
+        myWinner = "O";
          return "O";   
+    }
         
       check = checkCol(); 
       if(check.equals("X")){
@@ -92,7 +94,7 @@ public class MasterArray
       check = checkDiagonal();
       if(check.equals("X"))
       {
-          myWinner = "X";
+         myWinner = "X";
         return "X";
     }
       if(check.equals("O"))
@@ -163,16 +165,24 @@ public class MasterArray
     
     private boolean checkDraw()
     {
-      boolean flag = false;
-      
-      for (int row = 0; row < bigTicTac.length; row++)
-        for(int col = 0; col < bigTicTac[0].length; col++)
-            if(!(bigTicTac[row][col].getFinishedSquare().equals("D")))
-                flag = false;
-          
-      if(myWinner.equals(" "))
-        flag = true;
-      return flag;
+      boolean flag = true;
+      if (myWinner.equals(" "))
+      {
+          for(int r = 0; r<3; r++)
+          {
+             for(int c = 0; c<3; c++)
+             {
+                if(bigTicTac[r][c].getFinishedSquare().equals(" "))
+                {
+                    flag = false;
+                    r = 99;
+                    c = 99;
+                }
+                }
+            }
+        }
+        
+        return flag;
 
     }
     
@@ -355,4 +365,7 @@ public class MasterArray
         return graphics;
     }
     
+    public String getMyWinner(){
+        return myWinner;
+    }
 }

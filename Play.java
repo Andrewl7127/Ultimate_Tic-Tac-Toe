@@ -11,7 +11,9 @@ public class Play
     private int count;
     private int previousX;
     private int previousY;
-    MasterArray game1;
+    private PlayerStatus playStatus;
+    private NextMove move; 
+    private MasterArray game1;
     boolean state;
     private final boolean DEBUG = true;
     
@@ -23,11 +25,23 @@ public class Play
       previousX = 5;
       previousY = 5;
       state = false;
+      playStatus = new PlayerStatus();
+      move = new NextMove();
     }
     
     public MasterArray getMA()
     {
        return game1;   
+    }
+    
+    public PlayerStatus getPS()
+    {
+        return playStatus;
+    }
+    
+    public NextMove getNM()
+    {
+        return move;
     }
     
     public void playGame(Square square)
@@ -48,6 +62,7 @@ public class Play
                 previousY = answer[3];
                 count++;   
                 helpChange(count);
+                move.changeCoord(previousX, previousY, game1);
                 if(DEBUG)
                     System.out.print("First if statement run");
                 }
@@ -59,6 +74,7 @@ public class Play
                 previousY = answer[3];
                 count++;   
                 helpChange(count);
+                 move.changeCoord(previousX, previousY, game1);
                 if(DEBUG)
                     System.out.print("First if statement run");
                 }
@@ -82,7 +98,7 @@ public class Play
                             previousX = answer[2];
                             previousY = answer[3];
                             count++;  
-                            
+                             move.changeCoord(previousX, previousY, game1);
                              if(DEBUG)
                                 System.out.println("If statemnt 4");
                     
@@ -94,6 +110,7 @@ public class Play
                     previousX = answer[2];
                     previousY = answer[3];
                     count++; 
+                     move.changeCoord(previousX, previousY, game1);
                     }
                 }
             }
@@ -103,6 +120,7 @@ public class Play
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;  
+                move.changeCoord(previousX, previousY, game1);
             } 
             
         }
@@ -117,7 +135,11 @@ public class Play
               game1.doMove(temp[0], temp[1], temp[2], temp[3], player);
               current.setStatus(playerTurn);
               state = game1.getMiniArray(temp[0], temp[1]).checkWon();
-    
+              if(player.equals("X"))
+                playStatus.currentPlayerO();
+              if(player.equals("O"))
+                playStatus.currentPlayerX();
+                
      }
      
      private void color(int[] answer)
