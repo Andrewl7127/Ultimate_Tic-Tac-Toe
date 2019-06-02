@@ -27,7 +27,17 @@ public class NextMove extends HBox
     
     public void changeCoord(int prevX, int prevY, MasterArray master)
     {
-        if(master.getMiniArray(prevX, prevY).getFinishedSquare().equals(" "))
+        if(!master.checkWon().equals(" "))
+        {
+            if(master.getMyWinner().equals("D"))
+                moveLabel.setText("Draw!");
+            else
+                moveLabel.setText("Player " + master.getMyWinner() + " wins!");
+        }
+        
+        else{
+        
+           if(master.getMiniArray(prevX, prevY).getFinishedSquare().equals(" "))
         {
             //new label next move prevX+1. prevY+1
             coord1 = Integer.toString(prevX+1);
@@ -41,6 +51,7 @@ public class NextMove extends HBox
             moveLabel.setText("Next Move: Any");
             
         }
+    }
         
     }
 }
