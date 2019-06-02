@@ -33,7 +33,6 @@ public class Square
     public void clicked(Play game)
     {
         game.playGame(this);
-        
     }
     
     public Node getGraphics()
@@ -59,6 +58,5 @@ public class Square
     public String getStatus()
     {
         return myStatus;
-    }
-    
+    }    
 }

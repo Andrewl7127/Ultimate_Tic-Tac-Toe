@@ -7,4 +7,5 @@ comment2.params=resourceName
 comment2.target=java.lang.String\ getResource(java.lang.String)
 comment3.params=args
 comment3.target=void\ main(java.lang.String[])
+comment3.text=\r\n\ Launches\ the\ application\r\n
 numComments=4

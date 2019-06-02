@@ -26,11 +26,14 @@ public class PlayerStatus extends HBox
     public PlayerStatus()
     {
         playerLabel.getStyleClass().add("info");
+        //sets label color to white
         playerLabel.setTextFill(Color.web("#FAEBD7"));
         imageView.setMouseTransparent(true);
+        //on the first call,image is set to x because x always goes first
         imageView.setImage(crossImage);
         imageView.setFitWidth(30);
         imageView.setFitHeight(30);
+        //puts the label and the player image together
         getChildren().addAll(playerLabel, imageView);
     }
     
