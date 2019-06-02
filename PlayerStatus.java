@@ -31,21 +31,17 @@ public class PlayerStatus extends HBox
         getChildren().addAll(playerLabel, imageView);
     }
     
-    public void update(String nextPlayer)
-    {
-        
-    }
     public void currentPlayerX()
     {
        imageView.setImage(crossImage);
-       imageView.setFitWidth(10);
-       imageView.setFitHeight(10);
+       imageView.setFitWidth(30);
+       imageView.setFitHeight(30);
     }
     
     public void currentPlayerO()
     {
         imageView.setImage(noughtImage);
-        imageView.setFitWidth(40);
-        imageView.setFitHeight(40);
+        imageView.setFitWidth(30);
+        imageView.setFitHeight(30);
     }
 }

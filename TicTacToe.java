@@ -15,7 +15,8 @@ public class TicTacToe extends Application
     {
         //need to get new scene(getGraphics from new Board)
         Play game = new Play();
-        Scene myScene = new Scene(game.getMA().getGraphics());
+        GameGraphics graphics = new GameGraphics(game);
+        Scene myScene = new Scene(graphics);
         myScene.getStylesheets().add(getResource("Graphics.css"));
            
         primaryStage.setTitle("Tic-Tac-Toe"); 
