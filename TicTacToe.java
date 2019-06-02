@@ -4,10 +4,10 @@ import javafx.scene.Scene;
 
 
 /**
- * Write a description of class GUI here.
+ * Sets the scene and main graphic methods
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class TicTacToe extends Application
 {

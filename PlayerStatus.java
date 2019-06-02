@@ -4,10 +4,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.*;
 import javafx.scene.paint.Color;
 /**
- * Write a description of class PlayerStatus here.
+ * Creates the graphics under the board to show who's turn it is
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class PlayerStatus extends HBox
 {

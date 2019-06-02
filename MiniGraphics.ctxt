@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MiniGraphics
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ BigSquareGraphics\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Creates\ the\ visual\ for\ each\ mini\ tic\ tac\ toe\ board\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
 comment1.params=master
 comment1.target=MiniGraphics(MiniArray)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ BigSquareGraphics\r\n

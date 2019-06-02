@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PlayerStatus
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ PlayerStatus\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Creates\ the\ graphics\ under\ the\ board\ to\ show\ who's\ turn\ it\ is\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
 comment1.params=
 comment1.target=PlayerStatus()
 comment2.params=

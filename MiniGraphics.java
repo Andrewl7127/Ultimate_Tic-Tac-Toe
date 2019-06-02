@@ -1,9 +1,9 @@
 import javafx.scene.layout.GridPane;
 /**
- * Write a description of class BigSquareGraphics here.
+ * Creates the visual for each mini tic tac toe board
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class MiniGraphics extends GridPane
 {

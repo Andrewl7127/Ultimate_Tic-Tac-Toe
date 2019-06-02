@@ -6,8 +6,8 @@ import javafx.scene.paint.Color;
 /**
  * Write a description of class NextMove here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class NextMove extends HBox
 {

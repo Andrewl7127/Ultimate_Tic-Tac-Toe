@@ -1,10 +1,11 @@
 import javafx.scene.Node;
 import java.util.*;
 /**
- * Write a description of class Square here.
+ * Decomposition of the square graphics class, helps interaction between
+ * classes
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class Square
 {

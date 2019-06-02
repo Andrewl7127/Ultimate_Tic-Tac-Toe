@@ -1,9 +1,9 @@
 import chn.util.*;
 /**
- * Write a description of class Play here.
+ * Class that runs the game
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class Play
 {

@@ -7,8 +7,8 @@ import javafx.scene.image.*;
 /**
  * Write a description of class SquareGraphics here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class SquareGraphics extends StackPane
 {

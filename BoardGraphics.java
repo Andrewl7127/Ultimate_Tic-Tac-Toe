@@ -1,10 +1,10 @@
 import javafx.scene.layout.GridPane;
 
 /**
- * Write a description of class BoardGraphics here.
+ * Creates the graphic for the whole big board
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class BoardGraphics extends GridPane
 {
