@@ -13,7 +13,7 @@ public class GameGraphics extends VBox
 {
     public GameGraphics(Play game)
     {
-        getChildren().addAll(game.getMA().getGraphics(), game.getPS());
+        getChildren().addAll(game.getMA().getGraphics(), game.getPS(), game.getNM());
         
     }
 }
