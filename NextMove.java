@@ -11,15 +11,16 @@ import javafx.scene.paint.Color;
  */
 public class NextMove extends HBox
 {
-    private final Label moveLabel = new Label("Next Move: Any");
-    private String coord1;
-    private String coord2;
+    //the label object printed at the bottom of the board
+    private final Label moveLabel;
     
     /**
      * Constructor for objects of class NextMove
      */
     public NextMove()
     {
+        //label at the beginning, prints message stating the next move
+        moveLabel = new Label("Next Move: Any");
         //grabs the information from Graphics.css
         moveLabel.getStyleClass().add("info");
         //changes label color to white

@@ -3,7 +3,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.event.*;
 import javafx.scene.image.*;
 /**
- * Write a description of class SquareGraphics here.
+ * Creates the graphics when you click an empty square and when you
+ * win a big square
  *
  * @author (Birla, Chang, Chung ,Liu)
  * @version (1.0)
