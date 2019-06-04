@@ -31,8 +31,11 @@ public class NextMove extends HBox
     /**
      * changes the label to reflect whether the game is won or where the next
      * move should be
-     * param    prevX and prevY     used to determine where the last play was made
-     *                              so we can print where the next move should be
+     * @param    prevX   used to determine where the last play was made
+     *                   so we can print where the next move should be
+     * @param    prevY   used to determine where the last play was made
+     *                   so we can print where the next move should be
+     * @param    master  the board we are using
      */
     public void changeCoord(int prevX, int prevY, MasterArray master)
     {
