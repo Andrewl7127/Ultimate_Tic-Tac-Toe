@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MasterArray
-comment0.text=\n\ Write\ a\ description\ of\ class\ MasterArray\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ MasterArray\ here.\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
 comment1.params=game
 comment1.target=MasterArray(Play)
 comment10.params=row\ col

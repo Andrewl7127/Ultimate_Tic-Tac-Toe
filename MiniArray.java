@@ -7,86 +7,86 @@ import javafx.scene.Parent;
  */
 public class MiniArray
 {
+    //array for each mini square
     private String [][] miniTicTac; 
+    //holds status of each big square
     private String finishedSquare;
+    //array of squares to create graphcis
     private Square[][] mini;
+    //graphics of mini square (x and o)
     private MiniGraphics graphics;
-    private int n;
+    //the game
     private Play myGame;
     
+    /**
+     * Constructor for MiniArray class
+     */
     public MiniArray(Play game)
     {
       miniTicTac = new String [3][3];
       mini = new Square[3][3];
       finishedSquare = " ";
-      n = 1;
+      int n = 1;
       myGame = game;
       
+      //initiliazes everything to their starting values
       for (int row = 0; row < miniTicTac.length; row++)
-        for(int col = 0; col < miniTicTac[0].length; col++)
-            miniTicTac[row][col] = " ";
-            
-      for(int r = 0; r < 3; r++)
-        {
-            for(int c = 0; c < 3; c++)
-            {
-                mini[r][c] = new Square(game);
-                mini[r][c].setInput(n);
-                n++;
-            }
-        }
-        
-      
+          for(int col = 0; col < miniTicTac[0].length; col++)
+          {
+              miniTicTac[row][col] = " ";
+              mini[row][col] = new Square(game);
+              mini[row][col].setInput(n);
+              n++;
+          }
       graphics = new MiniGraphics(this);
     }
     
     /**
-     * does the move specified 
-     * @param x        index of x location that move needs to be played
-     * @param y        index of y location that move needs to be played
-     * @param player   what player makes the move
-     *                 should be "X" or "O"
+     * Does the move
+     * @param x  index of x coordinate of the move
+     * @param y  index of y coordinate of the move
+     * @param player  the player who's turn it is
      */
     public void doMove(int x, int y, String player)
     {
-        if(miniTicTac[x][y].compareTo("X")>0)
-            throw new IllegalArgumentException();
         miniTicTac[x][y] = player;
     }
     
     /**
-     * Checks if the array has been won
-     * @return integer           returns 0 or 3 if the square has been won by "X" or "0" respectively
-     *                           returns -1 if the square has not been won
-     *                           returns 2 if the square has been drawn
+     * Checks if the big square is won
+     * @return true if the square is won/drawn, false if not
      */
     public boolean checkWon()
     {
       return (checkRow() || checkCol() || checkDraw() || checkDiagonal());
-        
     }
     
+    //used to check if the square is won by winning by the row
     private boolean checkRow()
-        {
+    {
         int x = 0;
-        for(int i =0; i<3; i++)
+        boolean check = false;
+        //checks each row if its won
+        for(int i =0; i < 3; i++)
         {
+             //if x won, the big square is won, so returns true
              if(miniTicTac[i][0].equals("X") && 
                 miniTicTac[i][1].equals("X") &&
-                miniTicTac[i][2].equals ("X")){
-                   finishedSquare = "X"; 
-                   return true;
-                }
-             
+                miniTicTac[i][2].equals ("X"))
+             {
+                 finishedSquare = "X"; 
+                 check = true;
+             }
+             //if o won, the big square is won, so returns true
              if(miniTicTac[i][0].equals("O") && 
                 miniTicTac[i][1].equals("O") &&
-                miniTicTac[i][2].equals ("O")){
-                   finishedSquare = "O";  
-                   return true;
-                }
-                 
+                miniTicTac[i][2].equals ("O"))
+             {
+                 finishedSquare = "O";  
+                 check = true;
+             } 
         }
-        return false;
+        return check;
     }
     
     
