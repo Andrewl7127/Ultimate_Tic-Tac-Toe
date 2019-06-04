@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Play
-comment0.text=\r\n\ Class\ that\ runs\ the\ game\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
+comment0.text=\n\ Class\ that\ runs\ the\ game\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
 comment1.params=
 comment1.target=Play()
 comment2.params=
