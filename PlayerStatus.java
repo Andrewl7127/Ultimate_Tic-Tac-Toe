@@ -22,9 +22,12 @@ public class PlayerStatus extends HBox
     //label at the bottom of the board to show who's turn it is
     private final Label playerLabel = new Label("Current Player: ");
         
-        
+    /**
+     * Constructor for PlayerStatus class
+     */  
     public PlayerStatus()
     {
+        //pulls necessary info from Graphics.css
         playerLabel.getStyleClass().add("info");
         //sets label color to white
         playerLabel.setTextFill(Color.web("#FAEBD7"));
@@ -37,6 +40,9 @@ public class PlayerStatus extends HBox
         getChildren().addAll(playerLabel, imageView);
     }
     
+    /**
+     * Changes bottom label to picture of an X to show that it is X's turn
+     */
     public void currentPlayerX()
     {
        //sets the actual image and image size for x
@@ -45,6 +51,9 @@ public class PlayerStatus extends HBox
        imageView.setFitHeight(30);
     }
     
+    /**
+     * Changes bottom label to picture of an O to show that it is O's turn
+     */
     public void currentPlayerO()
     {
         //sets the actual image and image size for o
