@@ -12,6 +12,9 @@ import javafx.scene.image.*;
 public class GameGraphics extends VBox
 //VBox is used so that the label is under the board
 {
+    /**
+     * Constructor for objects of class GameGraphics
+     */
     public GameGraphics(Play game)
     {
         getChildren().addAll(game.getMA().getGraphics(), game.getPS(), game.getNM());
