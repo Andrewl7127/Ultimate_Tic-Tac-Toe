@@ -89,104 +89,122 @@ public class MiniArray
         return check;
     }
     
-    
+    //used to check if the square is won by winning the col
     private boolean  checkCol()
     {
         int x = 0;
+        boolean check = false;
         for(int i =0; i<3; i++)
         {
             if(miniTicTac[0][i].equals("X") && 
                 miniTicTac[1][i].equals("X") &&
-                miniTicTac[2][i].equals ("X")){
-                   finishedSquare = "X"; 
-                   return true;
-                }
-             
-             if(miniTicTac[0][i].equals("O") && 
-                miniTicTac[1][i].equals("O") &&
-                miniTicTac[2][i].equals ("O")){
-                   finishedSquare = "O";  
-                   return true;
-                }
+                miniTicTac[2][i].equals ("X"))
+            {
+                finishedSquare = "X"; 
+                check = true;
+            }
+            if(miniTicTac[0][i].equals("O") && 
+               miniTicTac[1][i].equals("O") &&
+               miniTicTac[2][i].equals ("O"))
+            {
+                finishedSquare = "O";  
+                check = true;
+            }
         }
-        
-        return false;  
-
+        return check;  
     }
     
+    //used to check if the square is won by diagonal
     private boolean checkDiagonal()
     {
-        
-        if (miniTicTac[0][2].equals("X") &&
+       boolean check = false;
+       if (miniTicTac[0][2].equals("X") &&
             miniTicTac[1][1].equals("X") && 
-            miniTicTac[2][0].equals("X")){
-            finishedSquare = "X";
-            return true;
-         }
-         else {
-             if (miniTicTac[0][2].equals("O") &&
-                 miniTicTac[1][1].equals("O") && 
-                 miniTicTac[2][0].equals("O")){
-                finishedSquare = "O";
-                return true;
-         }
+            miniTicTac[2][0].equals("X"))
+       {
+           finishedSquare = "X";
+           check = true;
        }
-       
-        if(miniTicTac[2][2].equals("X") && 
+       else 
+       {
+           if (miniTicTac[0][2].equals("O") &&
+                 miniTicTac[1][1].equals("O") && 
+                 miniTicTac[2][0].equals("O"))
+           {
+                finishedSquare = "O";
+                check = true;
+           }
+       }
+       if(miniTicTac[2][2].equals("X") && 
            miniTicTac[1][1].equals("X") &&
-           miniTicTac[0][0].equals("X")) {
-              finishedSquare = "X";
-              return true;
-               
-            }
-           else{
-               if(miniTicTac[2][2].equals("O") && 
-                  miniTicTac[1][1].equals("O") &&
-                  miniTicTac[0][0].equals("O")) {
-                  finishedSquare = "O";
-                  return true;
+           miniTicTac[0][0].equals("X")) 
+       {
+           finishedSquare = "X";
+           check = true;  
+       }
+       else
+       {
+             if(miniTicTac[2][2].equals("O") && 
+                miniTicTac[1][1].equals("O") &&
+                miniTicTac[0][0].equals("O")) 
+             {
+                finishedSquare = "O";
+                check = true;
                        
-                }
-        }
-       return false;
-        
+             }
+       }
+       return check;
     }
-    
+    //if the sqaure is drawn(nethier players wins it)
     private boolean checkDraw()
     {
-      
       for (int row = 0; row < miniTicTac.length; row++)
         for(int col = 0; col < miniTicTac[0].length; col++)
             if(!(miniTicTac[row][col].equals("X") ||
                miniTicTac[row][col].equals("O")))
                 return false;
-      
-    if(finishedSquare.equals(" "))
+      if(finishedSquare.equals(" "))
       {
-      finishedSquare = "D";  
-      return true;
-    }
-    else
-      return true;
-
+          finishedSquare = "D";  
+          return true;
+      }
+      else
+          return true;
     }
     
+    /**
+     * Tells you the status of the finished square
+     * @return  finishedSquare
+     */
     public String getFinishedSquare()
     {
         return finishedSquare;
-        
     }
     
+    /**
+     * Returns a specified square
+     * @param row  row index of specified square
+     * @param col  col index of specified square
+     * @return the square
+     */
     public Square getSquare(int row, int col)
     {
         return mini[row][col];
     }
     
+    /**
+     * Returns the graphics of this miniarray
+     * @return the graphics
+     */
     public Parent getGraphics()
     {
         return graphics;
     }
     
+    /**
+     * Changes the big square to the winning player's color
+     * @param winner  the winner of the square(x, o, draw)
+     */
     public void colorMini(String winner)
     {
         for(int r = 0; r < 3; r++)
