@@ -21,6 +21,7 @@ public class TicTacToe extends Application
         primaryStage.setScene(myScene);
         primaryStage.show();
     }
+    
     //Allows us to use graphics.css
     private String getResource(String resourceName) 
     {

@@ -47,11 +47,7 @@ public class MasterArray
     }
     
     /**
-     * does the move specified 
-     * @param x        index of x location that move needs to be played
-     * @param y        index of y location that move needs to be played
-     * @param player   what player makes the move
-     *                 should be either "1" for "X" or "0" for "Y"
+     *
      */
     public void doMove(int x1, int y1, int x, int y, String player)
     {
@@ -61,54 +57,55 @@ public class MasterArray
     }
     
     /**
-     * Checks if the array has been won
-     * @return integer           returns 0 or 3 if the square has been won by "X" or "0" respectively
-     *                           returns -1 if the square has not been won
-     *                           returns 2 if the square has been drawn
+     *
      */
     public String checkWon()
     {
-      String check = checkRow();
-      if(check.equals("X")){
-        myWinner = "X";
-        return "X";
-    }
-     
-    if(check.equals("O")){
-        myWinner = "O";
-         return "O";   
-    }
-        
-      check = checkCol(); 
-      if(check.equals("X")){
-        myWinner = "X";
-        return "X";
-    }
-    
-      if(check.equals("O"))
-      {
-          myWinner = "O";
-         return "O"; 
+        String check = checkRow();
+        if(check.equals("X"))
+        {
+            myWinner = "X";
+            return "X";
         }
-      
-      check = checkDiagonal();
-      if(check.equals("X"))
-      {
-         myWinner = "X";
-        return "X";
-    }
-      if(check.equals("O"))
-      {
-          myWinner = "O";
-         return "O";   
+         
+        if(check.equals("O"))
+        {
+            myWinner = "O";
+             return "O";   
         }
-      if(checkDraw())
-      {
-          myWinner = "D";
-        return "D";
-    }
-      return " ";
+            
+        check = checkCol(); 
+        if(check.equals("X"))
+        {
+            myWinner = "X";
+            return "X";
+        }
         
+        if(check.equals("O"))
+        {
+            myWinner = "O";
+            return "O"; 
+        }
+          
+        check = checkDiagonal();
+        if(check.equals("X"))
+        {
+            myWinner = "X";
+            return "X";
+        }
+        
+        if(check.equals("O"))
+        {
+           myWinner = "O";
+           return "O";   
+        }
+        
+        if(checkDraw())
+        {
+           myWinner = "D";
+           return "D";
+        }
+        return " ";
     }
     
     private String checkRow()
