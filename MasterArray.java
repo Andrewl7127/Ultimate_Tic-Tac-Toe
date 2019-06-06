@@ -33,10 +33,23 @@ public class MasterArray
       myWinner = " ";
       
       for (int row = 0; row < bigTicTac.length; row++)
+      {
         for(int col = 0; col < bigTicTac[0].length; col++)
+        {
             bigTicTac[row][col] = new MiniArray(myGame);
+           
+            for(int r2 = 0; r2 < 3; r2++)
+                {
+                    for(int c2 = 0; c2 < 3; c2++)
+                
+                        bigTicTac[row][col].getSquare(r2, c2).setInput(9*num 
+                            + bigTicTac[row][col].getSquare(r2, c2).getInput());
+                    }
+            num++;
+        }
             
-      
+    }
+    /*
       for(int r = 0; r < 3; r++)
         {
             for(int c = 0; c < 3; c++)
@@ -46,7 +59,7 @@ public class MasterArray
                 for(int r2 = 0; r2 < 3; r2++)
                 {
                     for(int c2 = 0; c2 < 3; c2++)
-                    {
+                
                         board[r][c].getSquare(r2, c2).setInput(9*num + board[r][c].getSquare(r2, c2).getInput());
                     }
                 }
@@ -55,6 +68,7 @@ public class MasterArray
             
             }
         }
+        */
         graphics = new BoardGraphics(this);
    }
     
@@ -444,7 +458,7 @@ public class MasterArray
      */
     public MiniArray getSquare(int row, int col)
     {
-        return board[row][col];
+        return bigTicTac[row][col];
     }
     
     /**
