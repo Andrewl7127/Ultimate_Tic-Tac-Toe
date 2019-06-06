@@ -103,10 +103,14 @@ public class MasterArray
               returner = myWinner = "O";   
                
         //lastly check if a draw is valid
-        if(checkDraw())
-        {
-           returner = myWinner = "D";
-        }
+        check = checkDraw();
+         if(check.equals("X"))
+            returner = myWinner = "X";
+        else
+            if(check.equals("O"))
+              returner = myWinner = "O"; 
+              else
+                returner = myWinner = "D";
         return returner;
     }
     
@@ -198,9 +202,12 @@ public class MasterArray
     }
     
     //checks if the game has been drawn
-    private boolean checkDraw()
+    private String checkDraw()
     {
       boolean flag = true;
+      int totX = 0, totY = 0;
+      String returner  = " ";
+      
       if (myWinner.equals(" ")) //if no one has won so far
       {
           if(!checkFull())
@@ -210,9 +217,32 @@ public class MasterArray
             }
         }
         
+      if(flag)
+      {
+      for(int x = 0; x< 3; x++)
+        {
+          for(int y = 0; y<3; y++)
+          {
+             String temp = this.getMiniArray(x,y).getFinishedSquare();
+             if (temp.equals("X"))
+                totX++;
+             if(temp.equals("Y"))
+                totY++;  
+            }
+        }
+        
+        if(totX>totY)
+            returner = "X";
+        else
+            if(totY>totX)
+                returner = "Y";
+                else
+                    returner = "D";
+       }
+       
+       return returner;
+    
       
-        return flag;
-
     }
     
     private boolean checkFull()
@@ -236,6 +266,8 @@ public class MasterArray
             }  
       return flag;
     }
+    
+    
     
     /**
      * Get the MiniArray from the index specified
