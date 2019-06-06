@@ -13,7 +13,9 @@ To win: Get 3 GIANT squares in a row to win.
 
 To draw: Neither player gets 3 GIANT squares in a row.
 
-How to move: On the first turn of the game, the first player can play anywhere.
+How to move: 
+
+             On the first turn of the game, the first player can play anywhere.
 
              Excluding the first turn, you must play in the GIANT square that corresponds to the mini square that the
               previous player clicked on.
@@ -28,6 +30,7 @@ References:  A simple tic tac toe game in JavaFX - https://gist.github.com/jewel
 Images used:  
 
   Nought image(0) - http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/128/green-cd-icon.png
+  
   Cross image(X) - http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/128/blue-cross-icon.png
   
   Solid blue image - https://rlv.zcache.com.au/solid_blue_solid_background_solid_color_square_sticker-rc755b95b45bb48888138093c66cfeea3_v9wf3_8byvr_307.jpg?rvtype=content
