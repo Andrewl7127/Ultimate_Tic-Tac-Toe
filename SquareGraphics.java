@@ -12,11 +12,11 @@ import javafx.scene.image.*;
 public class SquareGraphics extends StackPane
 {
     //Image = class that allows pictures to be added through URLs
-    //image of X
+    //image of O
     static final Image noughtImage = new Image
        ("http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/128/green-cd-icon.png");
       
-    //image of O
+    //image of X
     static final Image crossImage = new Image
       ("http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/128/blue-cross-icon.png");
       

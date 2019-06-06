@@ -78,31 +78,52 @@ public class MasterArray
         //check the row and see if someone won
         String check = checkRow();
         String returner = " ";
+        boolean flag = false;
         if(check.equals("X"))
+        {
             myWinner = returner = "X";
+            flag = true;
+        }
         else        
         if(check.equals("O"))
+        {
+            flag = true;
             returner = myWinner = "O";
+        }
         
         //checkCol and see if someone won
         check = checkCol(); 
-        if(check.equals("X"))      
+        if(check.equals("X")) 
+        {
             myWinner = returner =  "X";
+            flag = true;
+        }
         else
             if(check.equals("O"))
+            {
+            flag = true;
             returner  = myWinner = "O";
+        }
             
             
         //check the diagonal and see if someone has won
         check = checkDiagonal();
        
         if(check.equals("X"))
+        {
             returner = myWinner = "X";
+            flag = true;
+        }
         else
             if(check.equals("O"))
-              returner = myWinner = "O";   
+            {
+              returner = myWinner = "O";  
+              flag = true;
+            }
                
         //lastly check if a draw is valid
+        if(!flag)
+        {
         check = checkDraw();
          if(check.equals("X"))
             returner = myWinner = "X";
@@ -110,7 +131,9 @@ public class MasterArray
             if(check.equals("O"))
               returner = myWinner = "O"; 
               else
-                returner = myWinner = "D";
+                if(check.equals("D"))
+                 returner = myWinner = "D";
+            }
         return returner;
     }
     
@@ -205,7 +228,7 @@ public class MasterArray
     private String checkDraw()
     {
       boolean flag = true;
-      int totX = 0, totY = 0;
+      int totX = 0, totO = 0;
       String returner  = " ";
       
       if (myWinner.equals(" ")) //if no one has won so far
@@ -226,16 +249,16 @@ public class MasterArray
              String temp = this.getMiniArray(x,y).getFinishedSquare();
              if (temp.equals("X"))
                 totX++;
-             if(temp.equals("Y"))
-                totY++;  
+             if(temp.equals("O"))
+                totO++;  
             }
         }
         
-        if(totX>totY)
+        if(totX>totO)
             returner = "X";
         else
-            if(totY>totX)
-                returner = "Y";
+            if(totO>totX)
+                returner = "O";
                 else
                     returner = "D";
        }
