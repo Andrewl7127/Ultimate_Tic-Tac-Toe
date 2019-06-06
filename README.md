@@ -9,7 +9,7 @@ The object of the game is to win the GIANT tic tac toe board.
 
 Rules:
 
-    To win: Get 3 GIANT squares in a row to win. 
+    To win: Get 3 GIANT squares in a row to win OR win more GIANT squares than your opponent.
 
     To draw: Neither player gets 3 GIANT squares in a row.
 
