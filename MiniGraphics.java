@@ -1,17 +1,18 @@
 import javafx.scene.layout.GridPane;
 /**
- * Write a description of class BigSquareGraphics here.
+ * Creates the visual for each mini tic tac toe board
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class MiniGraphics extends GridPane
 {
     /**
-     * Constructor for objects of class BigSquareGraphics
+     * Constructor for objects of class MiniGraphics
      */
     public MiniGraphics(MiniArray master)
     {
+        //creates 9 square visuals
         for(int row = 0; row < 3; row++)
         {
             for(int col = 0; col < 3; col++)

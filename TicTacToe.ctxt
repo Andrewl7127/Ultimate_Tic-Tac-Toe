@@ -1,10 +1,11 @@
 #BlueJ class context
 comment0.target=TicTacToe
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ GUI\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Sets\ the\ scene\ and\ main\ graphic\ methods\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
 comment1.params=primaryStage
 comment1.target=void\ start(javafx.stage.Stage)
 comment2.params=resourceName
 comment2.target=java.lang.String\ getResource(java.lang.String)
 comment3.params=args
 comment3.target=void\ main(java.lang.String[])
+comment3.text=\r\n\ Launches\ the\ application\r\n
 numComments=4

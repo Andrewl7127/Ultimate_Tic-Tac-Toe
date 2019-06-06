@@ -2,22 +2,33 @@ import javafx.scene.Parent;
 /**
  * Write a description of class MasterArray here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Birla, Chang, Chung ,Liu)
+ * @version (1.0)
  */
 public class MasterArray
 {
+    //holds the MiniArrays that house each individual score
+    //each cell in bigTicTac represents a big square on the boar
     private MiniArray [][] bigTicTac; 
     private MiniArray[][] board = new MiniArray[3][3];
+    
+    //holds the board Graphics
     private BoardGraphics graphics;
-    private int num;
+    
+    //the Play class we are using to make the game run
     private Play myGame;
+    
+    //the object that houses the winner 
     private String myWinner;
     
+    /**
+     * Constructor for the MasterArray class
+     * @param game    the Play class you use to run the whole game
+     */
     public MasterArray(Play game)
     {
       bigTicTac = new MiniArray [3][3];
-      num = 0;
+      int num = 0;
       myGame = game;
       myWinner = " ";
       
@@ -25,6 +36,7 @@ public class MasterArray
         for(int col = 0; col < bigTicTac[0].length; col++)
             bigTicTac[row][col] = new MiniArray(myGame);
             
+      
       for(int r = 0; r < 3; r++)
         {
             for(int c = 0; c < 3; c++)
@@ -40,18 +52,19 @@ public class MasterArray
                 }
                 
                 num++;
+            
             }
         }
-        
         graphics = new BoardGraphics(this);
-    }
+   }
     
     /**
-     * does the move specified 
-     * @param x        index of x location that move needs to be played
-     * @param y        index of y location that move needs to be played
-     * @param player   what player makes the move
-     *                 should be either "1" for "X" or "0" for "Y"
+     * Does the move specified 
+     * @param x1     row index of the big square move needs was played 
+     * @param y1     col index of the big square move needs was played
+     * @param x      row index of the little square move was played 
+     * @param y      col index of the little square move was played
+     * @param player "X" or "O" depending on who just played the move 
      */
     public void doMove(int x1, int y1, int x, int y, String player)
     {
@@ -61,120 +74,149 @@ public class MasterArray
     }
     
     /**
-     * Checks if the array has been won
-     * @return integer           returns 0 or 3 if the square has been won by "X" or "0" respectively
-     *                           returns -1 if the square has not been won
-     *                           returns 2 if the square has been drawn
+     * Checks if the game was won 
+     * @return   winner   "X", "O", "D" if a result was made, " " if no result yet 
      */
     public String checkWon()
     {
-      String check = checkRow();
-      if(check.equals("X")){
-        myWinner = "X";
-        return "X";
-    }
-     
-    if(check.equals("O")){
-        myWinner = "O";
-         return "O";   
-    }
+        //check the row and see if someone won
+        String check = checkRow();
+        String returner = " ";
+        if(check.equals("X"))
+            myWinner = returner = "X";
+        else        
+        if(check.equals("O"))
+            returner = myWinner = "O";
         
-      check = checkCol(); 
-      if(check.equals("X")){
-        myWinner = "X";
-        return "X";
+        //checkCol and see if someone won
+        check = checkCol(); 
+        if(check.equals("X"))      
+            myWinner = returner =  "X";
+        else
+            if(check.equals("O"))
+            returner  = myWinner = "O";
+            
+            
+        //check the diagonal and see if someone has won
+        check = checkDiagonal();
+       
+        if(check.equals("X"))
+            returner = myWinner = "X";
+        else
+            if(check.equals("O"))
+              returner = myWinner = "O";   
+               
+        //lastly check if a draw is valid
+        if(checkDraw())
+        {
+           returner = myWinner = "D";
+        }
+        return returner;
     }
     
-      if(check.equals("O"))
-      {
-          myWinner = "O";
-         return "O"; 
-        }
-      
-      check = checkDiagonal();
-      if(check.equals("X"))
-      {
-         myWinner = "X";
-        return "X";
-    }
-      if(check.equals("O"))
-      {
-          myWinner = "O";
-         return "O";   
-        }
-      if(checkDraw())
-      {
-          myWinner = "D";
-        return "D";
-    }
-      return " ";
-        
-    }
-    
+    //checks if a row has been won 
     private String checkRow()
         {
+         String returner = " "; 
+            //traverses all three rows
              for(int i =0; i<3; i++)
         {
+            //gets finished square from every miniArray in the row and checks for X or O
+            //winner
+            
              if ((bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
              + bigTicTac[i][2].getFinishedSquare()).equals("OOO"))
-                return "O";
-                
+             {
+                returner = "O";
+                i = 99;
+            }
+            else
+            {
              if ((bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
              + bigTicTac[i][2].getFinishedSquare()).equals("XXX"))
-                return "X";
+             {
+                returner = "X";
+                i = 99;
+            }
+          }
         }
         
         return " ";
     }
     
-    
+    //checks the column
     private String checkCol()
     {
+        String returner = " ";
+        
+        //traverses each column 
         for(int i =0; i<3; i++)
         {
+            //checks the row for the column
              if ((bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
              + bigTicTac[2][i].getFinishedSquare()).equals("OOO"))
-                return "O";
+             {
+                // O has won 
+                returner =  "O";
+                i = 99;
+            }
                 
+            
              if ((bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
              + bigTicTac[2][i].getFinishedSquare()).equals("XXX"))
-                return "X";
+             {
+                 //X has won 
+                returner = "X";
+                i = 99;
+            }
         }
         
-        return " ";
+        return returner;
     }
     
+    //checks the diagonal of the bigTicTac class for a winner
     private String checkDiagonal()
     {
+        //get the three miniArray's finished square from top left to bottom right 
         String x = bigTicTac[0][2].getFinishedSquare() + bigTicTac[1][1].getFinishedSquare() + bigTicTac[2][0].getFinishedSquare();
+        String returner = " ";
         
+        //if all three equal X or O, someone has won
         if(x.equals("XXX"))
-            return "X";
-        if(x.equals("OOO"))
-            return "O";
+            returner =  "X";
+        else
+            if(x.equals("OOO"))
+              returner =  "O";
         
+        //get the three miniArray's finished square from top right to bottom left
         x = bigTicTac[2][2].getFinishedSquare() + bigTicTac[1][1].getFinishedSquare() + bigTicTac[0][0].getFinishedSquare();
         
+        //check for a win
         if(x.equals("XXX"))
-            return "X";
-        if(x.equals("OOO"))
-            return "O";
+            returner =  "X";
+        else
+            if(x.equals("OOO"))
+                returner =  "O";
         
-       return " ";
+       return returner;
     }
     
+    //checks if the game has been drawn
     private boolean checkDraw()
     {
       boolean flag = true;
-      if (myWinner.equals(" "))
+      if (myWinner.equals(" ")) //if no one has won so far
       {
           for(int r = 0; r<3; r++)
           {
              for(int c = 0; c<3; c++)
              {
-                if(bigTicTac[r][c].getFinishedSquare().equals(" "))
+                if(bigTicTac[r][c].getFinishedSquare().equals(" ")) 
+                //if a big square still has a result pending a draw is not possible
                 {
-                    flag = false;
+                    flag = false; 
+                    
+                    //exit the for loop
                     r = 99;
                     c = 99;
                 }
@@ -182,19 +224,39 @@ public class MasterArray
             }
         }
         
+      
         return flag;
 
     }
     
+    /**
+     * Get the MiniArray from the index specified
+     * @param x1  index of the row the MiniArray you want is located
+     * @param y1  index of the column the MiniArray you want is located
+     * @return miniarray    the miniArray requested 
+     */
     public MiniArray getMiniArray(int x1, int y1)
     {
         return bigTicTac[x1][y1];
     }
     
+    /**
+     * This converts an integer from 1-81 to the index location for the move that was played
+     * Housed in an integer array of 4 elements
+     * array[0] holds row index of the big board the move was played
+     * array[1] holds col index of the big board the move was played
+     * answer[2] holds row index of the small board the move was played
+     * answer[3] holds col index of the small board the move was played
+     * 
+     * @param input    the integer from 1-81 that the user played in 
+     *                 (the location of the square the user clicked)
+     * @return answer  int array that holds the values specified above
+     */
     public int[] inputConvert(int input)
     {
         int[] answer = new int[4];
         
+        //switch case to get the first two locations of the array
         switch(input)
         {
           case 1:
@@ -206,7 +268,8 @@ public class MasterArray
           case 7:
           case 8:
           case 9:
-            answer[0] = 0;
+            //square 1-9 are housed in index 0,0 
+            answer[0] = 0; 
             answer [1]= 0;
             break;
           case 10:
@@ -218,6 +281,7 @@ public class MasterArray
           case 16:
           case 17:
           case 18:
+           //square 10-18 are housed ar index 0,1 
             answer[0] = 0;
             answer [1] = 1;
             break;
@@ -230,6 +294,7 @@ public class MasterArray
           case 25:
           case 26:
           case 27:
+            //square 19-27 are housed at index 0,2
             answer[0] = 0;
             answer[1] = 2;
             break;
@@ -242,6 +307,7 @@ public class MasterArray
           case 34: 
           case 35:
           case 36:
+            //square 28-36 are housed at index 1,0
             answer[0] = 1;
             answer[1] = 0;
             break;
@@ -254,6 +320,7 @@ public class MasterArray
           case 43:
           case 44: 
           case 45:
+            //square 37-45 are housed at index 1,1
             answer[0] = 1;
             answer[1] = 1;
             break;
@@ -266,6 +333,7 @@ public class MasterArray
           case 52:
           case 53:
           case 54: 
+            //square 46-54 housed at index 1,2 
             answer[0] = 1;
             answer[1] = 2;
             break;
@@ -278,6 +346,7 @@ public class MasterArray
           case 61:
           case 62:
           case 63:
+            //square 55-63 housed at index 2,0 
             answer[0] = 2;
             answer[1] = 0;
             break;
@@ -290,6 +359,7 @@ public class MasterArray
           case 70:
           case 71:
           case 72:
+            //square 64,72 housed at index 2,1
             answer[0] = 2;
             answer[1] = 1;
             break;
@@ -302,6 +372,7 @@ public class MasterArray
           case 79:
           case 80:
           case 81:
+            //square 73,81 housed at index 2,2 
             answer[0] = 2;
             answer[1] = 2;
             break;
@@ -309,43 +380,53 @@ public class MasterArray
             throw new IllegalArgumentException();
         }
         
+        //mod done so we can get the location of the square inside the big sqaure
         input %=9;
         
         switch(input)
         {
            case 1:
+               //this means its in the top right
                answer[2] = 0;
                answer[3] = 0;
                break;
            case 2:
+                //this means its in the top middle
                answer[2] = 0;
                answer[3] =1;
                break;
            case 3:
+                //this means its in the top right
               answer[2] = 0;
               answer[3] = 2;
               break;
            case 4:
+                //this means its in the middle left 
               answer[2] = 1;
               answer[3] = 0;
               break;
            case 5:
+                //this means its in the middle middle 
               answer[2] = 1;
               answer [3] = 1;
               break;
            case 6:
+               //this means the squareis in the middle right
               answer[2] = 1;
               answer [3] = 2;
               break;
            case 7: 
+                //this means the sqaure is in the bottom left
              answer[2] = 2;
              answer [3] = 0;
              break;
            case 8:
+                //this means the sqaure is in the bottom middle 
              answer[2] = 2;
              answer [3] = 1;
              break;
            case 0:
+            //this means the square is in the bottom right
             answer[2] = 2;
             answer [3] = 2;
             break;
@@ -355,16 +436,30 @@ public class MasterArray
         return answer;
     }
     
+    /**
+     * Returns the sqaure object specified by the user
+     * @param row   the row index for the square you want 
+     * @param col   the col index for the sqaure you want 
+     * @return sqaurey    the sqaure object 
+     */
     public MiniArray getSquare(int row, int col)
     {
         return board[row][col];
     }
     
+    /**
+     * Returns the graphics class associated with the game 
+     * @return graphics   the graphics class associated with the game 
+     */
     public Parent getGraphics()
     {
         return graphics;
     }
     
+    /**
+     * Returns the myWinner string
+     * @return myWinner     the winner of the game 
+     */
     public String getMyWinner(){
         return myWinner;
     }

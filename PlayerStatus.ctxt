@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=PlayerStatus
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ PlayerStatus\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Creates\ the\ graphics\ under\ the\ board\ to\ show\ who's\ turn\ it\ is\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
 comment1.params=
 comment1.target=PlayerStatus()
+comment1.text=\n\ Constructor\ for\ PlayerStatus\ class\n
 comment2.params=
 comment2.target=void\ currentPlayerX()
+comment2.text=\n\ Changes\ bottom\ label\ to\ picture\ of\ an\ X\ to\ show\ that\ it\ is\ X's\ turn\n
 comment3.params=
 comment3.target=void\ currentPlayerO()
+comment3.text=\n\ Changes\ bottom\ label\ to\ picture\ of\ an\ O\ to\ show\ that\ it\ is\ O's\ turn\n
 numComments=4
