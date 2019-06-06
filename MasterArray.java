@@ -129,18 +129,30 @@ public class MasterArray
     private String checkCol()
     {
         String returner = " ";
+        
+        //traverses each column 
         for(int i =0; i<3; i++)
         {
+            //checks the row for the column
              if ((bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
              + bigTicTac[2][i].getFinishedSquare()).equals("OOO"))
-                return "O";
+             {
+                // O has won 
+                returner =  "O";
+                i = 99;
+            }
                 
+            
              if ((bigTicTac[0][i].getFinishedSquare() + bigTicTac[1][i].getFinishedSquare() 
              + bigTicTac[2][i].getFinishedSquare()).equals("XXX"))
-                return "X";
+             {
+                 //X has won 
+                returner = "X";
+                i = 99;
+            }
         }
         
-        return " ";
+        return returner;
     }
     
     //checks the diagonal of the bigTicTac class for a winner
