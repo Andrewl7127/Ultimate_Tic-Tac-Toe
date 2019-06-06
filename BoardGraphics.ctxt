@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=BoardGraphics
-comment0.text=\r\n\ Creates\ the\ graphic\ for\ the\ whole\ big\ board\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
+comment0.text=\n\ Creates\ the\ graphic\ for\ the\ whole\ big\ board\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
 comment1.params=board
 comment1.target=BoardGraphics(MasterArray)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ BoardGraphics\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ BoardGraphics\n
 numComments=2

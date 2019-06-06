@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=NextMove
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ NextMove\ here.\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ NextMove\ here.\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
 comment1.params=
 comment1.target=NextMove()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ NextMove\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ NextMove\n
 comment2.params=prevX\ prevY\ master
 comment2.target=void\ changeCoord(int,\ int,\ MasterArray)
-comment2.text=\r\n\ changes\ the\ label\ to\ reflect\ whether\ the\ game\ is\ won\ or\ where\ the\ next\r\n\ move\ should\ be\r\n\ @param\ \ \ \ prevX\ \ \ used\ to\ determine\ where\ the\ last\ play\ was\ made\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ so\ we\ can\ print\ where\ the\ next\ move\ should\ be\r\n\ @param\ \ \ \ prevY\ \ \ used\ to\ determine\ where\ the\ last\ play\ was\ made\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ so\ we\ can\ print\ where\ the\ next\ move\ should\ be\r\n\ @param\ \ \ \ master\ \ the\ board\ we\ are\ using\r\n
+comment2.text=\n\ changes\ the\ label\ to\ reflect\ whether\ the\ game\ is\ won\ or\ where\ the\ next\n\ move\ should\ be\n\ @param\ \ \ \ prevX\ \ \ used\ to\ determine\ where\ the\ last\ play\ was\ made\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ so\ we\ can\ print\ where\ the\ next\ move\ should\ be\n\ @param\ \ \ \ prevY\ \ \ used\ to\ determine\ where\ the\ last\ play\ was\ made\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ so\ we\ can\ print\ where\ the\ next\ move\ should\ be\n\ @param\ \ \ \ master\ \ the\ board\ we\ are\ using\n
 comment3.params=x\ y
 comment3.target=java.lang.String\ getNext(int,\ int)
 numComments=4

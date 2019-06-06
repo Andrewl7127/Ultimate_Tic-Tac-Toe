@@ -1,6 +1,6 @@
 import javafx.scene.Parent;
 /**
- * Write a description of class MasterArray here.
+ * Master array that represents big board
  *
  * @author (Birla, Chang, Chung ,Liu)
  * @version (1.0)
@@ -10,7 +10,6 @@ public class MasterArray
     //holds the MiniArrays that house each individual score
     //each cell in bigTicTac represents a big square on the boar
     private MiniArray [][] bigTicTac; 
-    private MiniArray[][] board = new MiniArray[3][3];
     
     //holds the board Graphics
     private BoardGraphics graphics;
@@ -268,25 +267,25 @@ public class MasterArray
       
     }
     
+    //checks if every single space in array is taken
+    //if every big square is won or drawn
     private boolean checkFull()
     {
-        boolean flag = true;
-        
+      boolean flag = true;  
       for(int r = 0; r<3; r++)
+      {
+          for(int c = 0; c<3; c++)
           {
-             for(int c = 0; c<3; c++)
-             {
-                if(bigTicTac[r][c].getFinishedSquare().equals(" ")) 
-                //if a big square still has a result pending a draw is not possible
-                {
-                    flag = false; 
-                    
-                    //exit the for loop
-                    r = 99;
-                    c = 99;
-                }
-                }
-            }  
+              if(bigTicTac[r][c].getFinishedSquare().equals(" ")) 
+              //if a big square still has a result pending a draw is not possible
+              {
+                  flag = false;                   
+                  //exit the for loop
+                  r = 99;
+                  c = 99;
+              }
+          }
+      }  
       return flag;
     }
     
