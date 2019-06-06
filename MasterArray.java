@@ -7,17 +7,28 @@ import javafx.scene.Parent;
  */
 public class MasterArray
 {
+    //holds the MiniArrays that house each individual score
+    //each cell in bigTicTac represents a big square on the boar
     private MiniArray [][] bigTicTac; 
     private MiniArray[][] board = new MiniArray[3][3];
+    
+    //holds the board Graphics
     private BoardGraphics graphics;
-    private int num;
+    
+    //the Play class we are using to make the game run
     private Play myGame;
+    
+    //the object that houses the winner 
     private String myWinner;
     
+    /**
+     * Constructor for the MasterArray class
+     * @param game    the Play class you use to run the whole game
+     */
     public MasterArray(Play game)
     {
       bigTicTac = new MiniArray [3][3];
-      num = 0;
+      int num = 0;
       myGame = game;
       myWinner = " ";
       
@@ -68,6 +79,7 @@ public class MasterArray
      */
     public String checkWon()
     {
+        //check the row and see if someone won
         String check = checkRow();
         String returner = " ";
         if(check.equals("X"))
@@ -76,13 +88,16 @@ public class MasterArray
         if(check.equals("O"))
             returner = myWinner = "O";
         
+        //checkCol and see if someone won
         check = checkCol(); 
         if(check.equals("X"))      
             myWinner = returner =  "X";
         else
             if(check.equals("O"))
             returner  = myWinner = "O";
-       
+            
+            
+        //check the diagonal and see if someone has won
         check = checkDiagonal();
        
         if(check.equals("X"))
@@ -91,7 +106,7 @@ public class MasterArray
             if(check.equals("O"))
               returner = myWinner = "O";   
                
-        
+        //lastly check if a draw is valid
         if(checkDraw())
         {
            returner = myWinner = "D";

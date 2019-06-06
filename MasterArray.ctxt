@@ -3,6 +3,7 @@ comment0.target=MasterArray
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ MasterArray\ here.\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
 comment1.params=game
 comment1.target=MasterArray(Play)
+comment1.text=\r\n\ Constructor\ for\ the\ MasterArray\ class\r\n\ @param\ game\ \ \ \ the\ Play\ class\ you\ use\ to\ run\ the\ whole\ game\r\n
 comment10.params=row\ col
 comment10.target=MiniArray\ getSquare(int,\ int)
 comment10.text=\r\n\ Returns\ the\ sqaure\ object\ specified\ by\ the\ user\r\n\ @param\ row\ \ \ the\ row\ index\ for\ the\ square\ you\ want\ \r\n\ @param\ col\ \ \ the\ col\ index\ for\ the\ sqaure\ you\ want\ \r\n\ @return\ sqaurey\ \ \ \ the\ sqaure\ object\ \r\n
