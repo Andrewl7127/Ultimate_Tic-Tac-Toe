@@ -63,55 +63,40 @@ public class MasterArray
     }
     
     /**
-     *
+     * Checks if the game was won 
+     * @return   winner   "X", "O", "D" if a result was made, " " if no result yet 
      */
     public String checkWon()
     {
         String check = checkRow();
+        String returner = " ";
         if(check.equals("X"))
-        {
-            myWinner = "X";
-            return "X";
-        }
-         
+            myWinner = returner = "X";
+        else        
         if(check.equals("O"))
-        {
-            myWinner = "O";
-             return "O";   
-        }
-            
+            returner = myWinner = "O";
+        
         check = checkCol(); 
-        if(check.equals("X"))
-        {
-            myWinner = "X";
-            return "X";
-        }
-        
-        if(check.equals("O"))
-        {
-            myWinner = "O";
-            return "O"; 
-        }
-          
+        if(check.equals("X"))      
+            myWinner = returner =  "X";
+        else
+            if(check.equals("O"))
+            returner  = myWinner = "O";
+       
         check = checkDiagonal();
+       
         if(check.equals("X"))
-        {
-            myWinner = "X";
-            return "X";
-        }
-        
-        if(check.equals("O"))
-        {
-           myWinner = "O";
-           return "O";   
-        }
+            returner = myWinner = "X";
+        else
+            if(check.equals("O"))
+              returner = myWinner = "O";   
+               
         
         if(checkDraw())
         {
-           myWinner = "D";
-           return "D";
+           returner = myWinner = "D";
         }
-        return " ";
+        return returner;
     }
     
     private String checkRow()
