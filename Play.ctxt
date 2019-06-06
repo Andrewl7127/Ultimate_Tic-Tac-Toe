@@ -1,21 +1,21 @@
 #BlueJ class context
 comment0.target=Play
-comment0.text=\n\ Class\ that\ runs\ the\ game\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
+comment0.text=\r\n\ Class\ that\ runs\ the\ game\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
 comment1.params=
 comment1.target=Play()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Play\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Play\r\n
 comment2.params=
 comment2.target=MasterArray\ getMA()
-comment2.text=\n\ Gets\ the\ board(masterarray)\n\ @return\ game1\n
+comment2.text=\r\n\ Gets\ the\ board(masterarray)\r\n\ @return\ game1\ masterArray\ being\ used\ for\ the\ game\r\n
 comment3.params=
 comment3.target=PlayerStatus\ getPS()
-comment3.text=\n\ Gets\ the\ graphic\ for\ who's\ player\ turn\ it\ is\n\ @return\ playStatus\n
+comment3.text=\r\n\ Gets\ the\ graphic\ for\ who's\ player\ turn\ it\ is\r\n\ @return\ playStatus\ "X"\ or\ "O"\ depending\ on\ whose\ turn\ it\ is\r\n
 comment4.params=
 comment4.target=NextMove\ getNM()
-comment4.text=\n\ Gets\ the\ graphic\ for\ where\ the\ next\ move\ should\ be\n\ @return\ move\n
+comment4.text=\r\n\ Gets\ the\ graphic\ for\ where\ the\ next\ move\ should\ be\r\n\ @return\ move\ \ \ \ the\ graphic\ for\ the\ next\ move\ \r\n
 comment5.params=square
 comment5.target=void\ playGame(Square)
-comment5.text=\n\ \n
+comment5.text=\r\n\ THis\ is\ the\ method\ that\ runs\ everytime\ a\ click\ is\ made\ \r\n\ It\ is\ called\ in\ the\ square\ graphics\ class\ \r\n\ @param\ square\ \ \ the\ sqaure\ object\ in\ which\ the\ next\ move\ was\ made\ \r\n
 comment6.params=temp\ player\ current
 comment6.target=void\ makeTurn(int[],\ java.lang.String,\ Square)
 comment7.params=answer

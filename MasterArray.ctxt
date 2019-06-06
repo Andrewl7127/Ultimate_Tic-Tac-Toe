@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MasterArray
-comment0.text=\n\ Write\ a\ description\ of\ class\ MasterArray\ here.\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MasterArray\ here.\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
 comment1.params=game
 comment1.target=MasterArray(Play)
 comment10.params=row\ col
@@ -11,10 +11,10 @@ comment12.params=
 comment12.target=java.lang.String\ getMyWinner()
 comment2.params=x1\ y1\ x\ y\ player
 comment2.target=void\ doMove(int,\ int,\ int,\ int,\ java.lang.String)
-comment2.text=\n\n
+comment2.text=\r\n\r\n
 comment3.params=
 comment3.target=java.lang.String\ checkWon()
-comment3.text=\n\n
+comment3.text=\r\n\r\n
 comment4.params=
 comment4.target=java.lang.String\ checkRow()
 comment5.params=

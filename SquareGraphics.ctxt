@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=SquareGraphics
-comment0.text=\n\ Creates\ the\ graphics\ when\ you\ click\ an\ empty\ square\ and\ when\ you\n\ win\ a\ big\ square\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
+comment0.text=\r\n\ Creates\ the\ graphics\ when\ you\ click\ an\ empty\ square\ and\ when\ you\r\n\ win\ a\ big\ square\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
 comment1.params=square
 comment1.target=SquareGraphics(Square)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ SquareGraphics\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ SquareGraphics\r\n
 comment2.params=mouseEvent
 comment2.target=void\ handle(javafx.scene.input.MouseEvent)
 comment3.params=winner
 comment3.target=void\ changeColor(java.lang.String)
-comment3.text=\n\ When\ a\ big\ square\ is\ won,\ it\ causes\ the\ whole\ square\ to\ turn\ a\ color\n\ corresponding\ to\ the\ winning\ player\n\ @param\ \ \ \ \ \ \ winner\ \ \ \ string\ contaning\ x,\ o,\ or\ d\ depending\ on\ who\ won\n
+comment3.text=\r\n\ When\ a\ big\ square\ is\ won,\ it\ causes\ the\ whole\ square\ to\ turn\ a\ color\r\n\ corresponding\ to\ the\ winning\ player\r\n\ @param\ \ \ \ \ \ \ winner\ \ \ \ string\ contaning\ x,\ o,\ or\ d\ depending\ on\ who\ won\r\n
 numComments=4

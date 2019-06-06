@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=GameGraphics
-comment0.text=\n\ Binds\ together\ the\ board\ graphics,\ labels,\ and\ player\ status\ graphics\ \n\ together\n\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\n\ @version\ (1.0)\n
+comment0.text=\r\n\ Binds\ together\ the\ board\ graphics,\ labels,\ and\ player\ status\ graphics\ \r\n\ together\r\n\r\n\ @author\ (Birla,\ Chang,\ Chung\ ,Liu)\r\n\ @version\ (1.0)\r\n
 comment1.params=game
 comment1.target=GameGraphics(Play)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GameGraphics\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameGraphics\r\n
 numComments=2
