@@ -48,7 +48,12 @@ public class MasterArray
    }
     
     /**
-     *
+     * Does the move specified 
+     * @param x1     row index of the big square move needs was played 
+     * @param y1     col index of the big square move needs was played
+     * @param x      row index of the little square move was played 
+     * @param y      col index of the little square move was played
+     * @param player "X" or "O" depending on who just played the move 
      */
     public void doMove(int x1, int y1, int x, int y, String player)
     {
