@@ -43,7 +43,7 @@ public class Play
     
     /**
      * Gets the board(masterarray)
-     * @return game1
+     * @return game1 masterArray being used for the game
      */
     public MasterArray getMA()
     {
@@ -52,7 +52,7 @@ public class Play
     
     /**
      * Gets the graphic for who's player turn it is
-     * @return playStatus
+     * @return playStatus "X" or "O" depending on whose turn it is
      */
     public PlayerStatus getPS()
     {
@@ -61,7 +61,7 @@ public class Play
     
     /**
      * Gets the graphic for where the next move should be
-     * @return move
+     * @return move    the graphic for the next move 
      */
     public NextMove getNM()
     {
@@ -69,58 +69,92 @@ public class Play
     }
     
     /**
-     * 
+     * THis is the method that runs everytime a click is made 
+     * It is called in the square graphics class 
+     * @param square   the sqaure object in which the next move was made 
      */
     public void playGame(Square square)
     {
         int[] answer = new int[4];
         
+        //if the move is on a square that was not taken previously 
         if(game1.checkWon().equals(" "))
         {
+            //get the coordinates for the move the user made
             answer = game1.inputConvert(square.getInput());
             
+            //change the person whose turn it is 
             helpChange(count);
+            
+            //if the last move resulted in a won square 
             if (state)
             {
+              
+              //if the user must make a move that goes in a big square that has already been won
+              //let the user make a move anywhere
               if (!game1.getMiniArray(previousX, previousY).getFinishedSquare().equals(" "))
                   {
+                      
+                //these are all moves that need to be made everytime a legal move 
+                //is played so the game works 
                 makeTurn(answer, playerTurn, square);
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;   
+                
+                //this needs to be done in here to avoid messing up not counting a turn 
+                //when this if statement executes
                 helpChange(count);
+                
                 move.changeCoord(previousX, previousY, game1);
                 if(DEBUG)
                     System.out.print("First if statement run");
                 }
                 else
+                
+                //if the move is made in the correct big squae and the square has not
+                //been wo n by someone
               if (answer[0] == previousX && answer[1] == previousY && game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                {
+                //make the move 
+                
                 makeTurn(answer, playerTurn, square);
                 previousX = answer[2];
                 previousY = answer[3];
                 count++;   
+                
+                //this needs to be done in here to avoid messing up not counting a turn 
+                //when this if statement executes
                 helpChange(count);
-                 move.changeCoord(previousX, previousY, game1);
+               
+                move.changeCoord(previousX, previousY, game1);
                 if(DEBUG)
                     System.out.print("First if statement run");
                 }
             }
-            else
-            {
+            else //the last move did not result in a won square 
+            {  
+            // if it is not the first move 
             if (count != 1)
             {
+                //if the move is played in a big square that has already been won
                 if (!game1.getMiniArray(answer[0], answer[1]).getFinishedSquare().equals(" "))
                 {
+                    //do nothing;illegal move
                     if(DEBUG)
                         System.out.println("If statemnt 2");
                 }
-                else
+                else //the move was played in a big square that is open
                 {
+                    //if the move is played in the wrong big square 
+                    //(does not follow the rules of the game)
                      if (answer[0] != previousX || answer[1] != previousY)
                     {
+                        
+                        //if the sqaure was won in the last move
                         if(game1.getMiniArray(previousX, previousY).checkWon())
                         {
+                            //they should be able to play anywhere
                             makeTurn(answer, playerTurn, square);
                             previousX = answer[2];
                             previousY = answer[3];
@@ -130,9 +164,13 @@ public class Play
                                 System.out.println("If statemnt 4");
                     
                         }
+                        
+                        //if the previous if statement evaluates to false
+                        //the move is illegal and cannot be made
                     }
-                    else
+                    else //the move was played in the correct big square
                     {
+                    //the move is legal and can be played
                     makeTurn(answer, playerTurn, square);
                     previousX = answer[2];
                     previousY = answer[3];
@@ -141,8 +179,9 @@ public class Play
                     }
                 }
             }
-            else
+            else //this is the first move of the game
             {
+                //you can make any move
                 makeTurn(answer, playerTurn, square);
                 previousX = answer[2];
                 previousY = answer[3];
@@ -152,6 +191,9 @@ public class Play
             
         }
      }
+     
+     //function call to color the big sqaure the correct color if the necessary conditions
+     //are met
      color(answer);    
         
         
