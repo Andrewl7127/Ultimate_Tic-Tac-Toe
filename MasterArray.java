@@ -99,17 +99,31 @@ public class MasterArray
         return returner;
     }
     
+    //checks if a row has been won 
     private String checkRow()
         {
+         String returner = " "; 
+            //traverses all three rows
              for(int i =0; i<3; i++)
         {
+            //gets finished square from every miniArray in the row and checks for X or O
+            //winner
+            
              if ((bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
              + bigTicTac[i][2].getFinishedSquare()).equals("OOO"))
-                return "O";
-                
+             {
+                returner = "O";
+                i = 99;
+            }
+            else
+            {
              if ((bigTicTac[i][0].getFinishedSquare() + bigTicTac[i][1].getFinishedSquare() 
              + bigTicTac[i][2].getFinishedSquare()).equals("XXX"))
-                return "X";
+             {
+                returner = "X";
+                i = 99;
+            }
+          }
         }
         
         return " ";
