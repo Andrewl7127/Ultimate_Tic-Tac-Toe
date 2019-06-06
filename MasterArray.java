@@ -38,6 +38,7 @@ public class MasterArray
         {
             bigTicTac[row][col] = new MiniArray(myGame);
            
+            //gives the square the correct identifier number for easy orginization 
             for(int r2 = 0; r2 < 3; r2++)
                 {
                     for(int c2 = 0; c2 < 3; c2++)
@@ -49,26 +50,7 @@ public class MasterArray
         }
             
     }
-    /*
-      for(int r = 0; r < 3; r++)
-        {
-            for(int c = 0; c < 3; c++)
-            {
-                board[r][c] = new MiniArray(myGame);
-                
-                for(int r2 = 0; r2 < 3; r2++)
-                {
-                    for(int c2 = 0; c2 < 3; c2++)
-                
-                        board[r][c].getSquare(r2, c2).setInput(9*num + board[r][c].getSquare(r2, c2).getInput());
-                    }
-                }
-                
-                num++;
-            
-            }
-        }
-        */
+   
         graphics = new BoardGraphics(this);
    }
     
