@@ -203,7 +203,23 @@ public class MasterArray
       boolean flag = true;
       if (myWinner.equals(" ")) //if no one has won so far
       {
-          for(int r = 0; r<3; r++)
+          if(!checkFull())
+          {
+              flag = false;
+              
+            }
+        }
+        
+      
+        return flag;
+
+    }
+    
+    private boolean checkFull()
+    {
+        boolean flag = true;
+        
+      for(int r = 0; r<3; r++)
           {
              for(int c = 0; c<3; c++)
              {
@@ -217,12 +233,8 @@ public class MasterArray
                     c = 99;
                 }
                 }
-            }
-        }
-        
-      
-        return flag;
-
+            }  
+      return flag;
     }
     
     /**
