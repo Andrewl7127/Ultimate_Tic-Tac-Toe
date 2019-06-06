@@ -33,28 +33,24 @@ public class MasterArray
       myWinner = " ";
       
       for (int row = 0; row < bigTicTac.length; row++)
+      {
         for(int col = 0; col < bigTicTac[0].length; col++)
-            bigTicTac[row][col] = new MiniArray(myGame);
-            
-      
-      for(int r = 0; r < 3; r++)
         {
-            for(int c = 0; c < 3; c++)
-            {
-                board[r][c] = new MiniArray(myGame);
-                
-                for(int r2 = 0; r2 < 3; r2++)
+            bigTicTac[row][col] = new MiniArray(myGame);
+           
+            //gives the square the correct identifier number for easy orginization 
+            for(int r2 = 0; r2 < 3; r2++)
                 {
                     for(int c2 = 0; c2 < 3; c2++)
-                    {
-                        board[r][c].getSquare(r2, c2).setInput(9*num + board[r][c].getSquare(r2, c2).getInput());
-                    }
-                }
                 
-                num++;
-            
-            }
+                        bigTicTac[row][col].getSquare(r2, c2).setInput(9*num 
+                            + bigTicTac[row][col].getSquare(r2, c2).getInput());
+                    }
+            num++;
         }
+            
+    }
+   
         graphics = new BoardGraphics(this);
    }
     
@@ -82,35 +78,62 @@ public class MasterArray
         //check the row and see if someone won
         String check = checkRow();
         String returner = " ";
+        boolean flag = false;
         if(check.equals("X"))
+        {
             myWinner = returner = "X";
+            flag = true;
+        }
         else        
         if(check.equals("O"))
+        {
+            flag = true;
             returner = myWinner = "O";
+        }
         
         //checkCol and see if someone won
         check = checkCol(); 
-        if(check.equals("X"))      
+        if(check.equals("X")) 
+        {
             myWinner = returner =  "X";
+            flag = true;
+        }
         else
             if(check.equals("O"))
+            {
+            flag = true;
             returner  = myWinner = "O";
+        }
             
             
         //check the diagonal and see if someone has won
         check = checkDiagonal();
        
         if(check.equals("X"))
+        {
+            returner = myWinner = "X";
+            flag = true;
+        }
+        else
+            if(check.equals("O"))
+            {
+              returner = myWinner = "O";  
+              flag = true;
+            }
+               
+        //lastly check if a draw is valid
+        if(!flag)
+        {
+        check = checkDraw();
+         if(check.equals("X"))
             returner = myWinner = "X";
         else
             if(check.equals("O"))
-              returner = myWinner = "O";   
-               
-        //lastly check if a draw is valid
-        if(checkDraw())
-        {
-           returner = myWinner = "D";
-        }
+              returner = myWinner = "O"; 
+              else
+                if(check.equals("D"))
+                 returner = myWinner = "D";
+            }
         return returner;
     }
     
@@ -202,12 +225,54 @@ public class MasterArray
     }
     
     //checks if the game has been drawn
-    private boolean checkDraw()
+    private String checkDraw()
     {
       boolean flag = true;
+      int totX = 0, totO = 0;
+      String returner  = " ";
+      
       if (myWinner.equals(" ")) //if no one has won so far
       {
-          for(int r = 0; r<3; r++)
+          if(!checkFull())
+          {
+              flag = false;
+              
+            }
+        }
+        
+      if(flag)
+      {
+      for(int x = 0; x< 3; x++)
+        {
+          for(int y = 0; y<3; y++)
+          {
+             String temp = this.getMiniArray(x,y).getFinishedSquare();
+             if (temp.equals("X"))
+                totX++;
+             if(temp.equals("O"))
+                totO++;  
+            }
+        }
+        
+        if(totX>totO)
+            returner = "X";
+        else
+            if(totO>totX)
+                returner = "O";
+                else
+                    returner = "D";
+       }
+       
+       return returner;
+    
+      
+    }
+    
+    private boolean checkFull()
+    {
+        boolean flag = true;
+        
+      for(int r = 0; r<3; r++)
           {
              for(int c = 0; c<3; c++)
              {
@@ -221,13 +286,11 @@ public class MasterArray
                     c = 99;
                 }
                 }
-            }
-        }
-        
-      
-        return flag;
-
+            }  
+      return flag;
     }
+    
+    
     
     /**
      * Get the MiniArray from the index specified
@@ -444,7 +507,7 @@ public class MasterArray
      */
     public MiniArray getSquare(int row, int col)
     {
-        return board[row][col];
+        return bigTicTac[row][col];
     }
     
     /**
