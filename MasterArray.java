@@ -163,7 +163,7 @@ public class MasterArray
           }
         }
         
-        return " ";
+        return returner;
     }
     
     //checks the column
