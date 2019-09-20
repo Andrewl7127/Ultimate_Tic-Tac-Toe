@@ -1,5 +1,4 @@
-# finalproject-super-sanctimonious-seahorses
-finalproject-super-sanctimonious-seahorses created by GitHub Classroom
+
 
 The Game of ULTIMATE TIC TAC TOE
 
